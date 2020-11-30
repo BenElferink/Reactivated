@@ -1,6 +1,6 @@
 {
-  "homepage": "https://belferink1996.github.io/",
-  "name": "reactjs",
+  "homepage": "https://reactivated.io",
+  "name": "reactivated",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -8,6 +8,7 @@
     "@testing-library/react": "^11.2.2",
     "@testing-library/user-event": "^12.2.2",
     "bootstrap": "^4.5.3",
+    "emailjs-com": "^2.6.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-router-dom": "^5.2.0",
