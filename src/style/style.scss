@@ -57,19 +57,29 @@ body {
 .Reactivated {
   width: 100vw;
   height: 100vh;
-  @import './Header';
-  .not-header {
-    display: flex;
-    @import './Nav';
-    .main {
-      width: calc(100vw - 300px);
-      height: calc(100vh - 100px);
-      display: grid;
-      place-items: center;
-      @import './Home';
-    }
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'nav main';
+  .header {
+    grid-area: header;
+  }
+  .nav {
+    grid-area: nav;
+  }
+  .main {
+    grid-area: main;
   }
 
+  @import './Header';
+  @import './Nav';
+  .main {
+    width: calc(100vw - 300px);
+    height: calc(100vh - 100px);
+    display: grid;
+    place-items: center;
+    @import './Home';
+  }
   @import './Modal';
 }
 

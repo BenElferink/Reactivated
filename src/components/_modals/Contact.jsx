@@ -40,7 +40,7 @@ function Contact({ toggleContactModal }) {
           <p className='sending'>Your message is being sent...</p>
         </div>
       ) : (
-        <div className={`modal-contact ${sent && 'flex-this'}`}>
+        <div className='modal-contact'>
           <h2>Contact Me!</h2>
           <p>
             Feel free to contact me with any topic!

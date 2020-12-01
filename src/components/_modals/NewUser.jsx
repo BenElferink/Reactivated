@@ -66,7 +66,7 @@ function NewUser({ users, setUsers, setCreateNew }) {
             setUsername(e.target.value);
           }}
         />
-        <div className='wrapper'>
+        <div className='avatars-wrapper'>
           <img
             src={MaleAvatar}
             alt='avatar'

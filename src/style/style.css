@@ -14,6 +14,20 @@ body {
 .Reactivated {
   width: 100vw;
   height: 100vh;
+  display: grid;
+  grid-template-areas: 'header header' 'nav main';
+}
+
+.Reactivated .header {
+  grid-area: header;
+}
+
+.Reactivated .nav {
+  grid-area: nav;
+}
+
+.Reactivated .main {
+  grid-area: main;
 }
 
 .Reactivated .header {
@@ -70,11 +84,7 @@ body {
   background-color: #2e3157;
 }
 
-.Reactivated .not-header {
-  display: flex;
-}
-
-.Reactivated .not-header .nav-bar {
+.Reactivated .nav {
   width: 300px;
   height: calc(100vh - 100px);
   display: flex;
@@ -85,26 +95,26 @@ body {
   direction: rtl;
 }
 
-.Reactivated .not-header .nav-bar::-webkit-scrollbar {
+.Reactivated .nav::-webkit-scrollbar {
   width: 5px;
 }
 
-.Reactivated .not-header .nav-bar::-webkit-scrollbar-track {
+.Reactivated .nav::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.Reactivated .not-header .nav-bar::-webkit-scrollbar-button {
+.Reactivated .nav::-webkit-scrollbar-button {
   display: none;
   opacity: 0;
   visibility: hidden;
 }
 
-.Reactivated .not-header .nav-bar::-webkit-scrollbar-thumb {
+.Reactivated .nav::-webkit-scrollbar-thumb {
   background-color: #5778f2;
   border-radius: 1rem;
 }
 
-.Reactivated .not-header .nav-bar .nav-item {
+.Reactivated .nav .nav-item {
   height: 60px;
   display: flex;
   align-items: center;
@@ -114,64 +124,64 @@ body {
   cursor: pointer;
 }
 
-.Reactivated .not-header .nav-bar .nav-item:hover, .Reactivated .not-header .nav-bar .nav-item:active {
+.Reactivated .nav .nav-item:hover, .Reactivated .nav .nav-item:active {
   color: #858ab5;
   text-decoration: underline;
 }
 
-.Reactivated .not-header .nav-bar .nav-item .nav-icon {
+.Reactivated .nav .nav-item .nav-icon {
   width: 30px;
   height: 30px;
   margin: 0 20px 0 30px;
   fill: #555a85;
 }
 
-.Reactivated .not-header .nav-bar .selected {
+.Reactivated .nav .selected {
   color: #858ab5;
   background: linear-gradient(to right, #202340 42px, #252848 69%);
 }
 
-.Reactivated .not-header .nav-bar .selected .nav-icon {
+.Reactivated .nav .selected .nav-icon {
   fill: #5778f2;
 }
 
-.Reactivated .not-header .main {
+.Reactivated .main {
   width: calc(100vw - 300px);
   height: calc(100vh - 100px);
   display: grid;
   place-items: center;
 }
 
-.Reactivated .not-header .main .home {
+.Reactivated .main .home {
   width: 100%;
   height: 100%;
   position: relative;
 }
 
-.Reactivated .not-header .main .home .text-area {
+.Reactivated .main .home .text-area {
   padding: 42px;
   text-align: right;
 }
 
-.Reactivated .not-header .main .home .text-area h2,
-.Reactivated .not-header .main .home .text-area h1 {
+.Reactivated .main .home .text-area h2,
+.Reactivated .main .home .text-area h1 {
   color: #68c180;
   text-shadow: 1px 1px #5778f2;
 }
 
-.Reactivated .not-header .main .home .text-area p {
+.Reactivated .main .home .text-area p {
   margin-top: 1rem;
   color: #858ab5;
 }
 
-.Reactivated .not-header .main .home .text-area p a,
-.Reactivated .not-header .main .home .text-area p span {
+.Reactivated .main .home .text-area p a,
+.Reactivated .main .home .text-area p span {
   color: #e7e8ea;
   text-decoration: none;
   cursor: pointer;
 }
 
-.Reactivated .not-header .main .home img {
+.Reactivated .main .home img {
   width: 100%;
   position: absolute;
   bottom: 0;
@@ -304,13 +314,13 @@ body {
   justify-content: space-evenly;
 }
 
-.Reactivated .modal-bg .modal-content .modal-new-user .left .wrapper {
+.Reactivated .modal-bg .modal-content .modal-new-user .left .avatars-wrapper {
   width: 220px;
   display: flex;
   flex-flow: row wrap;
 }
 
-.Reactivated .modal-bg .modal-content .modal-new-user .left .wrapper .avatar {
+.Reactivated .modal-bg .modal-content .modal-new-user .left .avatars-wrapper .avatar {
   width: 80px;
   height: 80px;
   margin: 10px 15px;
@@ -319,7 +329,7 @@ body {
   cursor: pointer;
 }
 
-.Reactivated .modal-bg .modal-content .modal-new-user .left .wrapper .selected {
+.Reactivated .modal-bg .modal-content .modal-new-user .left .avatars-wrapper .selected {
   filter: drop-shadow(0 0 10px #9673f7);
 }
 

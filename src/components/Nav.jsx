@@ -6,7 +6,7 @@ import ExchangeIcon from './../media/icons/exchange';
 
 function Nav({ page }) {
   return (
-    <nav className='nav-bar'>
+    <nav className='nav'>
       <div style={{ height: '30px' }} />
       <Link to='/' className={`nav-item ${page === '/' && 'selected'}`}>
         <HomeIcon className='nav-icon' />

@@ -29,16 +29,14 @@ function App() {
       <div className='Reactivated'>
         <Router>
           <Header toggleLoginModal={toggleLoginModal} toggleContactModal={toggleContactModal} />
-          <div className='not-header'>
-            <Nav page={page} />
-            <main className='main'>
-              <Switch>
-                <Route exact path='/' component={() => <Home setPage={setPage} toggleLoginModal={toggleLoginModal} />} />
-                <Route exact path='/calculator' component={() => <Calculator setPage={setPage} />} />
-                <Route exact path='/currency-converter' component={() => <CurrencyConverter setPage={setPage} />} />
-              </Switch>
-            </main>
-          </div>
+          <Nav page={page} />
+          <main className='main'>
+            <Switch>
+              <Route exact path='/' component={() => <Home setPage={setPage} toggleLoginModal={toggleLoginModal} />} />
+              <Route exact path='/calculator' component={() => <Calculator setPage={setPage} />} />
+              <Route exact path='/currency-converter' component={() => <CurrencyConverter setPage={setPage} />} />
+            </Switch>
+          </main>
         </Router>
         {loginModal && <Login toggleLoginModal={toggleLoginModal} />}
         {contactModal && <Contact toggleContactModal={toggleContactModal} />}
