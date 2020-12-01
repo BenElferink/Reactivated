@@ -1,0 +1,38 @@
+.nav-bar {
+  width: 300px;
+  height: calc(100vh - 100px);
+  display: flex;
+  flex-direction: column;
+  background-color: $darker;
+  border-radius: 0 2rem 0 0;
+  overflow-y: scroll;
+  direction: rtl;
+  @include scrollbar;
+  .nav-item {
+    height: 60px;
+    display: flex;
+    align-items: center;
+    color: $textSoft;
+    text-decoration: none;
+    direction: ltr;
+    cursor: pointer;
+    &:hover,
+    &:active {
+      color: $textBold;
+      text-decoration: underline;
+    }
+    .nav-icon {
+      width: 30px;
+      height: 30px;
+      margin: 0 20px 0 30px;
+      fill: $textSoft;
+    }
+  }
+  .selected {
+    color: $textBold;
+    background: linear-gradient(to right, $darker 42px, $background 69%);
+    .nav-icon {
+      fill: $accentBlue;
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.modal-login {
+  min-width: 300px;
+  max-width: 600px;
+  min-height: 300px;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  h6 {
+    margin-bottom: 5px;
+    font-size: 16px;
+  }
+  .top-card {
+    margin-bottom: 50px !important;
+  }
+  .user-card {
+    width: 110px;
+    height: 110px;
+    margin: 7px 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid $accentBlue;
+    border-radius: 1rem;
+    color: $accentBlue;
+    cursor: pointer;
+    img {
+      width: 55px;
+      height: 55px;
+      margin-bottom: 5px;
+    }
+  }
+  .users-wrap {
+    max-height: 150px;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: flex-start;
+    overflow-y: scroll;
+    @include scrollbar;
+    .plus {
+      font-size: 42px;
+    }
+  }
+}

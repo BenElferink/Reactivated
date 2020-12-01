@@ -11,33 +11,6 @@ body {
   background-color: #252848;
 }
 
-.mobile-error {
-  display: none;
-}
-
-@media only screen and (max-width: 768px) {
-  .Reactivated {
-    display: none;
-  }
-  .mobile-error {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  .mobile-error img {
-    width: 250px;
-    height: 250px;
-    margin: 100px 0 42px 0;
-  }
-  .mobile-error p {
-    margin: 0 15px;
-    color: #858ab5;
-    text-align: center;
-  }
-}
-
 .Reactivated {
   width: 100vw;
   height: 100vh;
@@ -48,7 +21,6 @@ body {
   height: 100px;
   display: flex;
   align-items: center;
-  justify-content: center;
   justify-content: space-between;
 }
 
@@ -57,18 +29,11 @@ body {
   margin-left: 25px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  justify-content: unset;
   border: 1px solid #555a85;
   border-radius: 1rem;
   color: #555a85;
   user-select: none;
   cursor: pointer;
-}
-
-.Reactivated .header .user:hover, .Reactivated .header .user:active {
-  background-color: #202340;
-  color: #e7e8ea;
 }
 
 .Reactivated .header .user .avatar {
@@ -77,12 +42,16 @@ body {
   margin: 7px 14px 7px 7px;
 }
 
+.Reactivated .header .user:hover, .Reactivated .header .user:active {
+  background-color: #202340;
+  color: #e7e8ea;
+}
+
 .Reactivated .header .contact-box {
   width: 300px;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   background-color: #202340;
   border-radius: 0 0 0 1rem;
 }
@@ -139,8 +108,6 @@ body {
   height: 60px;
   display: flex;
   align-items: center;
-  justify-content: center;
-  justify-content: unset;
   color: #555a85;
   text-decoration: none;
   direction: ltr;
@@ -171,9 +138,8 @@ body {
 .Reactivated .not-header .main {
   width: calc(100vw - 300px);
   height: calc(100vh - 100px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
 }
 
 .Reactivated .not-header .main .home {
@@ -219,9 +185,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -253,7 +218,7 @@ body {
   background-color: #c83232;
 }
 
-.Reactivated .modal-bg .modal-content .modal-user {
+.Reactivated .modal-bg .modal-content .modal-login {
   min-width: 300px;
   max-width: 600px;
   min-height: 300px;
@@ -263,16 +228,16 @@ body {
   align-items: center;
 }
 
-.Reactivated .modal-bg .modal-content .modal-user h6 {
+.Reactivated .modal-bg .modal-content .modal-login h6 {
   margin-bottom: 5px;
   font-size: 16px;
 }
 
-.Reactivated .modal-bg .modal-content .modal-user .top-card {
+.Reactivated .modal-bg .modal-content .modal-login .top-card {
   margin-bottom: 50px !important;
 }
 
-.Reactivated .modal-bg .modal-content .modal-user .user-card {
+.Reactivated .modal-bg .modal-content .modal-login .user-card {
   width: 110px;
   height: 110px;
   margin: 7px 15px;
@@ -286,13 +251,13 @@ body {
   cursor: pointer;
 }
 
-.Reactivated .modal-bg .modal-content .modal-user .user-card img {
+.Reactivated .modal-bg .modal-content .modal-login .user-card img {
   width: 55px;
   height: 55px;
   margin-bottom: 5px;
 }
 
-.Reactivated .modal-bg .modal-content .modal-user .users-wrap {
+.Reactivated .modal-bg .modal-content .modal-login .users-wrap {
   max-height: 150px;
   display: flex;
   flex-flow: row wrap;
@@ -301,26 +266,26 @@ body {
   overflow-y: scroll;
 }
 
-.Reactivated .modal-bg .modal-content .modal-user .users-wrap::-webkit-scrollbar {
+.Reactivated .modal-bg .modal-content .modal-login .users-wrap::-webkit-scrollbar {
   width: 5px;
 }
 
-.Reactivated .modal-bg .modal-content .modal-user .users-wrap::-webkit-scrollbar-track {
+.Reactivated .modal-bg .modal-content .modal-login .users-wrap::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.Reactivated .modal-bg .modal-content .modal-user .users-wrap::-webkit-scrollbar-button {
+.Reactivated .modal-bg .modal-content .modal-login .users-wrap::-webkit-scrollbar-button {
   display: none;
   opacity: 0;
   visibility: hidden;
 }
 
-.Reactivated .modal-bg .modal-content .modal-user .users-wrap::-webkit-scrollbar-thumb {
+.Reactivated .modal-bg .modal-content .modal-login .users-wrap::-webkit-scrollbar-thumb {
   background-color: #5778f2;
   border-radius: 1rem;
 }
 
-.Reactivated .modal-bg .modal-content .modal-user .users-wrap .plus {
+.Reactivated .modal-bg .modal-content .modal-login .users-wrap .plus {
   font-size: 42px;
 }
 
@@ -354,10 +319,6 @@ body {
   cursor: pointer;
 }
 
-.Reactivated .modal-bg .modal-content .modal-new-user .left .wrapper .avatar:hover, .Reactivated .modal-bg .modal-content .modal-new-user .left .wrapper .avatar:active {
-  filter: drop-shadow(0 0 10px #9673f7);
-}
-
 .Reactivated .modal-bg .modal-content .modal-new-user .left .wrapper .selected {
   filter: drop-shadow(0 0 10px #9673f7);
 }
@@ -372,17 +333,6 @@ body {
   font-size: 14px;
 }
 
-.Reactivated .modal-bg .modal-content .modal-new-user .right .pin-new button {
-  background-color: #202340;
-  border: none;
-  color: #858ab5;
-}
-
-.Reactivated .modal-bg .modal-content .modal-new-user .right .pin-new button:hover, .Reactivated .modal-bg .modal-content .modal-new-user .right .pin-new button:active {
-  background-color: #555a85;
-  color: #e7e8ea;
-}
-
 .Reactivated .modal-bg .modal-content .modal-new-user .right .create {
   padding: 12px 28px;
   background-color: transparent;
@@ -395,6 +345,136 @@ body {
 
 .Reactivated .modal-bg .modal-content .modal-new-user .right .create:hover, .Reactivated .modal-bg .modal-content .modal-new-user .right .create:active {
   background-color: #2e3157;
+}
+
+.Reactivated .modal-bg .modal-content .modal-contact {
+  width: 500px;
+  min-height: 200px;
+}
+
+.Reactivated .modal-bg .modal-content .modal-contact h2 {
+  margin: 15px 25px 0;
+  color: #858ab5;
+}
+
+.Reactivated .modal-bg .modal-content .modal-contact p {
+  margin: 10px 25px 30px 25px;
+  color: #858ab5;
+  font-size: 14px;
+}
+
+.Reactivated .modal-bg .modal-content .modal-contact form {
+  margin: 15px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.Reactivated .modal-bg .modal-content .modal-contact form input,
+.Reactivated .modal-bg .modal-content .modal-contact form textarea {
+  background-color: #202340;
+  border: 1px solid #5778f2;
+  border-radius: 10px;
+  color: #858ab5;
+  outline: none;
+}
+
+.Reactivated .modal-bg .modal-content .modal-contact form textarea {
+  min-width: 450px;
+  min-height: 150px;
+  margin-top: 15px;
+  padding: 5px 7px;
+  font-size: 15px;
+  resize: none;
+  overflow-y: scroll;
+}
+
+.Reactivated .modal-bg .modal-content .modal-contact form textarea::-webkit-scrollbar {
+  width: 5px;
+}
+
+.Reactivated .modal-bg .modal-content .modal-contact form textarea::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.Reactivated .modal-bg .modal-content .modal-contact form textarea::-webkit-scrollbar-button {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.Reactivated .modal-bg .modal-content .modal-contact form textarea::-webkit-scrollbar-thumb {
+  background-color: #5778f2;
+  border-radius: 1rem;
+}
+
+.Reactivated .modal-bg .modal-content .modal-contact form textarea::placeholder {
+  opacity: 1;
+}
+
+.Reactivated .modal-bg .modal-content .modal-contact form .row {
+  display: flex;
+  align-items: center;
+}
+
+.Reactivated .modal-bg .modal-content .modal-contact form .row .group .inp-group {
+  height: 50px;
+  position: relative;
+}
+
+.Reactivated .modal-bg .modal-content .modal-contact form .row .group .inp-group input {
+  width: 200px;
+  margin-top: 15px;
+  padding: 5px 7px;
+  font-size: 12px;
+}
+
+.Reactivated .modal-bg .modal-content .modal-contact form .row .group .inp-group input::placeholder {
+  opacity: 0;
+}
+
+.Reactivated .modal-bg .modal-content .modal-contact form .row .group .inp-group input:focus::placeholder {
+  opacity: 1;
+}
+
+.Reactivated .modal-bg .modal-content .modal-contact form .row .group .inp-group input:focus ~ label {
+  top: -5px;
+}
+
+.Reactivated .modal-bg .modal-content .modal-contact form .row .group .inp-group label {
+  position: absolute;
+  top: 19px;
+  left: 7px;
+  color: #858ab5;
+  font-size: 14px;
+  cursor: text;
+  transition: all 0.3s;
+}
+
+.Reactivated .modal-bg .modal-content .modal-contact form .row button {
+  padding: 12px 28px;
+  background-color: transparent;
+  border: 1px solid #5778f2;
+  border-radius: 10px;
+  color: #e7e8ea;
+  font-size: 14px;
+  cursor: pointer;
+  margin-left: 100px;
+  background-color: #5778f2;
+}
+
+.Reactivated .modal-bg .modal-content .modal-contact form .row button:hover, .Reactivated .modal-bg .modal-content .modal-contact form .row button:active {
+  background-color: #2e3157;
+}
+
+.Reactivated .modal-bg .modal-content .modal-contact form .row button:hover, .Reactivated .modal-bg .modal-content .modal-contact form .row button:active {
+  background-color: #202340;
+}
+
+.Reactivated .modal-bg .modal-content .modal-contact .sending {
+  margin: 0;
+  color: #e7e8ea;
+  font-size: 20px;
 }
 
 .Reactivated .modal-bg .pin-code table .display {
@@ -421,6 +501,17 @@ body {
   cursor: pointer;
 }
 
+.Reactivated .modal-bg .pin-new button {
+  background-color: #202340;
+  border: none;
+  color: #858ab5;
+}
+
+.Reactivated .modal-bg .pin-new button:hover, .Reactivated .modal-bg .pin-new button:active {
+  background-color: #555a85;
+  color: #e7e8ea;
+}
+
 .Reactivated .modal-bg .pin-log {
   width: 100%;
   height: 100%;
@@ -444,144 +535,8 @@ body {
   color: #202340;
 }
 
-.Reactivated .modal-bg .flex-this {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.Reactivated .modal-bg .modal-contact {
-  width: 500px;
-  min-height: 200px;
-}
-
-.Reactivated .modal-bg .modal-contact h2 {
-  margin: 15px 25px 0;
-  color: #858ab5;
-}
-
-.Reactivated .modal-bg .modal-contact p {
-  margin: 10px 25px 30px 25px;
-  color: #858ab5;
-  font-size: 14px;
-}
-
-.Reactivated .modal-bg .modal-contact form {
-  margin: 15px 25px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.Reactivated .modal-bg .modal-contact form input,
-.Reactivated .modal-bg .modal-contact form textarea {
-  background-color: #202340;
-  border: 1px solid #5778f2;
-  border-radius: 10px;
-  color: #858ab5;
-  outline: none;
-}
-
-.Reactivated .modal-bg .modal-contact form textarea {
-  min-width: 450px;
-  min-height: 150px;
-  margin-top: 15px;
-  padding: 5px 7px;
-  font-size: 15px;
-  resize: none;
-  overflow-y: scroll;
-}
-
-.Reactivated .modal-bg .modal-contact form textarea::-webkit-scrollbar {
-  width: 5px;
-}
-
-.Reactivated .modal-bg .modal-contact form textarea::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.Reactivated .modal-bg .modal-contact form textarea::-webkit-scrollbar-button {
-  display: none;
-  opacity: 0;
-  visibility: hidden;
-}
-
-.Reactivated .modal-bg .modal-contact form textarea::-webkit-scrollbar-thumb {
-  background-color: #5778f2;
-  border-radius: 1rem;
-}
-
-.Reactivated .modal-bg .modal-contact form textarea::placeholder {
-  opacity: 1;
-}
-
-.Reactivated .modal-bg .modal-contact form .row {
-  display: flex;
-  align-items: center;
-}
-
-.Reactivated .modal-bg .modal-contact form .row .group .inp-group {
-  height: 50px;
-  position: relative;
-}
-
-.Reactivated .modal-bg .modal-contact form .row .group .inp-group input {
-  width: 200px;
-  margin-top: 15px;
-  padding: 5px 7px;
-  font-size: 12px;
-}
-
-.Reactivated .modal-bg .modal-contact form .row .group .inp-group input::placeholder {
-  opacity: 0;
-}
-
-.Reactivated .modal-bg .modal-contact form .row .group .inp-group input:focus::placeholder {
-  opacity: 1;
-}
-
-.Reactivated .modal-bg .modal-contact form .row .group .inp-group input:focus ~ label {
-  top: -5px;
-}
-
-.Reactivated .modal-bg .modal-contact form .row .group .inp-group label {
-  position: absolute;
-  top: 19px;
-  left: 7px;
-  color: #858ab5;
-  font-size: 14px;
-  cursor: text;
-  transition: all 0.3s;
-}
-
-.Reactivated .modal-bg .modal-contact form .row button {
-  padding: 12px 28px;
-  background-color: transparent;
-  border: 1px solid #5778f2;
-  border-radius: 10px;
-  color: #e7e8ea;
-  font-size: 14px;
-  cursor: pointer;
-  margin-left: 100px;
-  background-color: #5778f2;
-}
-
-.Reactivated .modal-bg .modal-contact form .row button:hover, .Reactivated .modal-bg .modal-contact form .row button:active {
-  background-color: #2e3157;
-}
-
-.Reactivated .modal-bg .modal-contact form .row button:hover, .Reactivated .modal-bg .modal-contact form .row button:active {
-  background-color: #202340;
-}
-
-.Reactivated .modal-bg .modal-contact .sending {
-  margin: 0;
-  color: #e7e8ea;
-  font-size: 20px;
-}
-
 @media (prefers-reduced-motion: no-preference) {
-  .modal-bg {
+  .Reactivated .modal-bg {
     animation: fade-in 0.2s linear;
   }
 }
@@ -592,6 +547,33 @@ body {
   }
   to {
     opacity: 1;
+  }
+}
+
+.mobile-error {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  .Reactivated {
+    display: none;
+  }
+  .mobile-error {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .mobile-error img {
+    width: 250px;
+    height: 250px;
+    margin: 100px 0 42px 0;
+  }
+  .mobile-error p {
+    margin: 0 15px;
+    color: #858ab5;
+    text-align: center;
   }
 }
 /*# sourceMappingURL=style.css.map */

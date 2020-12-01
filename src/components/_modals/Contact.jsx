@@ -36,7 +36,7 @@ function Contact({ toggleContactModal }) {
   return (
     <Modal toggleModal={toggleContactModal} hideX={sent}>
       {sent ? (
-        <div className='modal-contact flex-this'>
+        <div className='modal-contact' style={{ display: 'grid', placeItems: 'center' }}>
           <p className='sending'>Your message is being sent...</p>
         </div>
       ) : (

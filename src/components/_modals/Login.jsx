@@ -48,7 +48,7 @@ function Login({ toggleLoginModal }) {
       {createNew ? (
         <NewUser users={users} setUsers={setUsers} setCreateNew={setCreateNew} />
       ) : (
-        <div className='modal-user'>
+        <div className='modal-login'>
           <h6>You are logged in as:</h6>
           <div className='user-card top-card'>
             <img src={loggedUser.avatar} alt='avatar' />
