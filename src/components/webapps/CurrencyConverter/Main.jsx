@@ -1,10 +1,36 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { UsersContext } from './../../../ContextAPI';
 import CurrencyGroup from './CurrencyGroup';
 import SwapIcon from './media/swap-48px';
 
 function Main({ exchangeRate, setExchangeRate }) {
-  const [currencyFrom, setCurrencyFrom] = useState('USD');
-  const [currencyTo, setCurrencyTo] = useState('ILS');
+  const context = useContext(UsersContext);
+  const [loggedUser, setLoggedUser] = context.logged;
+  useEffect(() => {
+    let user = loggedUser;
+    user.currencyData = {
+      currencyFrom,
+      currencyTo,
+    };
+    setLoggedUser(user);
+  });
+
+  function defineState(param, base) {
+    if (loggedUser.currencyData === undefined) {
+      return base;
+    } else {
+      return loggedUser.currencyData[`${param}`];
+    }
+  }
+
+  // ----------
+  // --------------------
+  // APP START
+  // --------------------
+  // ----------
+
+  const [currencyFrom, setCurrencyFrom] = useState(defineState('currencyFrom', 'USD'));
+  const [currencyTo, setCurrencyTo] = useState(defineState('currencyTo', 'ILS'));
   const [inputFrom, setInputFrom] = useState('');
   const [inputTo, setInputTo] = useState('');
 
