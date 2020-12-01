@@ -39,9 +39,9 @@ function App() {
               <Route exact path='/sudoku' component={() => <Sudoku setPage={setPage} />} />
             </Switch>
           </main>
+          {loginModal && <Login toggleLoginModal={toggleLoginModal} />}
+          {contactModal && <Contact toggleContactModal={toggleContactModal} />}
         </Router>
-        {loginModal && <Login toggleLoginModal={toggleLoginModal} />}
-        {contactModal && <Contact toggleContactModal={toggleContactModal} />}
       </div>
     </>
   );

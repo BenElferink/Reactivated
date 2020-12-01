@@ -1,10 +1,12 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { UsersContext } from '../../ContextAPI';
+import { useHistory } from 'react-router-dom';
 import Modal from './Modal';
 import PinCode from './PinCode';
 import NewUser from './NewUser';
 
 function Login({ toggleLoginModal }) {
+  const history = useHistory();
   const context = useContext(UsersContext);
   const [loggedUser, setLoggedUser] = context.logged;
   const [users, setUsers] = context.all;
@@ -21,9 +23,8 @@ function Login({ toggleLoginModal }) {
       if (user.id === logInId) {
         if (pinCode === user.pinCode) {
           setLoggedUser(user);
-          setLogIn(false);
-          setLogInId(null);
-          setPinCode('');
+          history.push('/');
+          toggleLoginModal();
         }
       }
     }
@@ -39,6 +40,8 @@ function Login({ toggleLoginModal }) {
       setLogIn(true);
     } else {
       setLoggedUser(user);
+      history.push('/');
+      toggleLoginModal();
     }
   };
 
