@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
+import { UsersContext } from './../../../ContextAPI';
 import './style/style.css';
 
 function Calculator({ setPage }) {
@@ -7,9 +8,35 @@ function Calculator({ setPage }) {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
-  const [selectedOperator, setSelectedOperator] = useState('');
-  const [prevNumber, setPrevNumber] = useState('');
-  const [currNumber, setCurrNumber] = useState('');
+  const context = useContext(UsersContext);
+  const [loggedUser, setLoggedUser] = context.logged;
+  useEffect(() => {
+    let user = loggedUser;
+    user.calculatorData = {
+      selectedOperator,
+      prevNumber,
+      currNumber,
+    };
+    setLoggedUser(user);
+  });
+
+  function defineState(param, base) {
+    if (loggedUser.calculatorData === undefined) {
+      return base;
+    } else {
+      return loggedUser.calculatorData[`${param}`];
+    }
+  }
+
+  // ----------
+  // --------------------
+  // APP START
+  // --------------------
+  // ----------
+
+  const [selectedOperator, setSelectedOperator] = useState(defineState('selectedOperator', ''));
+  const [prevNumber, setPrevNumber] = useState(defineState('prevNumber', ''));
+  const [currNumber, setCurrNumber] = useState(defineState('currNumber', ''));
 
   const calculate = (argument) => {
     let res = () => {
