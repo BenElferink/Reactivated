@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './style/style.css';
+import MobileError from './components/MobileError';
 import Header from './components/Header';
 import Nav from './components/Nav';
 import Home from './components/Home';
-import Login from './components/_modals/Login';
-import Contact from './components/_modals/Contact';
-import Calculator from './components/Calculator/Calculator';
-import CurrencyConverter from './components/CurrencyConverter/CurrencyConverter';
-import MobileError from './components/MobileError';
+import Login from './components/modals/Login';
+import Contact from './components/modals/Contact';
+import Calculator from './components/webapps/Calculator/Calculator';
+import CurrencyConverter from './components/webapps/CurrencyConverter/CurrencyConverter';
 
 function App() {
   const [page, setPage] = useState('/');

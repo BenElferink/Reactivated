@@ -31,11 +31,13 @@ body {
 }
 
 .Reactivated .header {
+  z-index: 1;
   width: 100%;
   height: 100px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-shadow: 0 0 1rem 2rem #252848;
 }
 
 .Reactivated .header .user {
@@ -85,6 +87,7 @@ body {
 }
 
 .Reactivated .nav {
+  z-index: 1;
   width: 300px;
   height: calc(100vh - 100px);
   display: flex;
@@ -150,6 +153,26 @@ body {
   height: calc(100vh - 100px);
   display: grid;
   place-items: center;
+  overflow-y: scroll;
+}
+
+.Reactivated .main::-webkit-scrollbar {
+  width: 5px;
+}
+
+.Reactivated .main::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.Reactivated .main::-webkit-scrollbar-button {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.Reactivated .main::-webkit-scrollbar-thumb {
+  background-color: #5778f2;
+  border-radius: 1rem;
 }
 
 .Reactivated .main .home {
@@ -159,6 +182,7 @@ body {
 }
 
 .Reactivated .main .home .text-area {
+  margin-bottom: 50px;
   padding: 42px;
   text-align: right;
 }
@@ -188,7 +212,12 @@ body {
   z-index: -1;
 }
 
+.Reactivated .main .shade {
+  box-shadow: 0 0 1rem 2rem #252848 inset;
+}
+
 .Reactivated .modal-bg {
+  z-index: 1;
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -531,7 +560,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   border-radius: 1rem;
 }
 
@@ -547,7 +576,7 @@ body {
 
 @media (prefers-reduced-motion: no-preference) {
   .Reactivated .modal-bg {
-    animation: fade-in 0.2s linear;
+    animation: fade-in 0.3s linear;
   }
 }
 

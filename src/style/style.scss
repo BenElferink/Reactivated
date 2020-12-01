@@ -70,15 +70,21 @@ body {
   .main {
     grid-area: main;
   }
-
   @import './Header';
   @import './Nav';
+
   .main {
     width: calc(100vw - 300px);
     height: calc(100vh - 100px);
     display: grid;
     place-items: center;
+    overflow-y: scroll;
+    @include scrollbar;
     @import './Home';
+
+    .shade {
+      box-shadow: 0 0 1rem 2rem $background inset;
+    }
   }
   @import './Modal';
 }
