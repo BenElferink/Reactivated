@@ -9,6 +9,7 @@ import Login from './components/modals/Login';
 import Contact from './components/modals/Contact';
 import Calculator from './components/webapps/Calculator/Calculator';
 import CurrencyConverter from './components/webapps/CurrencyConverter/CurrencyConverter';
+import Sudoku from './components/webapps/Sudoku/Sudoku';
 
 function App() {
   const [page, setPage] = useState('/');
@@ -30,11 +31,12 @@ function App() {
         <Router>
           <Header toggleLoginModal={toggleLoginModal} toggleContactModal={toggleContactModal} />
           <Nav page={page} />
-          <main className='main'>
+          <main>
             <Switch>
               <Route exact path='/' component={() => <Home setPage={setPage} toggleLoginModal={toggleLoginModal} />} />
               <Route exact path='/calculator' component={() => <Calculator setPage={setPage} />} />
               <Route exact path='/currency-converter' component={() => <CurrencyConverter setPage={setPage} />} />
+              <Route exact path='/sudoku' component={() => <Sudoku setPage={setPage} />} />
             </Switch>
           </main>
         </Router>

@@ -18,19 +18,19 @@ body {
   grid-template-areas: 'header header' 'nav main';
 }
 
-.Reactivated .header {
+.Reactivated header {
   grid-area: header;
 }
 
-.Reactivated .nav {
+.Reactivated nav {
   grid-area: nav;
 }
 
-.Reactivated .main {
+.Reactivated main {
   grid-area: main;
 }
 
-.Reactivated .header {
+.Reactivated header {
   z-index: 1;
   width: 100%;
   height: 100px;
@@ -40,7 +40,7 @@ body {
   box-shadow: 0 0 1rem 2rem #252848;
 }
 
-.Reactivated .header .user {
+.Reactivated header .user {
   width: 250px;
   margin-left: 25px;
   display: flex;
@@ -52,18 +52,18 @@ body {
   cursor: pointer;
 }
 
-.Reactivated .header .user .avatar {
+.Reactivated header .user .avatar {
   width: 40px;
   height: 40px;
   margin: 7px 14px 7px 7px;
 }
 
-.Reactivated .header .user:hover, .Reactivated .header .user:active {
+.Reactivated header .user:hover, .Reactivated header .user:active {
   background-color: #202340;
   color: #e7e8ea;
 }
 
-.Reactivated .header .contact-box {
+.Reactivated header .contact-box {
   width: 300px;
   height: 100%;
   display: grid;
@@ -72,7 +72,7 @@ body {
   border-radius: 0 0 0 1rem;
 }
 
-.Reactivated .header .contact-box button {
+.Reactivated header .contact-box button {
   padding: 12px 28px;
   background-color: transparent;
   border: 1px solid #5778f2;
@@ -82,11 +82,11 @@ body {
   cursor: pointer;
 }
 
-.Reactivated .header .contact-box button:hover, .Reactivated .header .contact-box button:active {
+.Reactivated header .contact-box button:hover, .Reactivated header .contact-box button:active {
   background-color: #2e3157;
 }
 
-.Reactivated .nav {
+.Reactivated nav {
   z-index: 1;
   width: 300px;
   height: calc(100vh - 100px);
@@ -98,26 +98,26 @@ body {
   direction: rtl;
 }
 
-.Reactivated .nav::-webkit-scrollbar {
+.Reactivated nav::-webkit-scrollbar {
   width: 5px;
 }
 
-.Reactivated .nav::-webkit-scrollbar-track {
+.Reactivated nav::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.Reactivated .nav::-webkit-scrollbar-button {
+.Reactivated nav::-webkit-scrollbar-button {
   display: none;
   opacity: 0;
   visibility: hidden;
 }
 
-.Reactivated .nav::-webkit-scrollbar-thumb {
+.Reactivated nav::-webkit-scrollbar-thumb {
   background-color: #5778f2;
   border-radius: 1rem;
 }
 
-.Reactivated .nav .nav-item {
+.Reactivated nav .nav-item {
   height: 60px;
   display: flex;
   align-items: center;
@@ -127,28 +127,28 @@ body {
   cursor: pointer;
 }
 
-.Reactivated .nav .nav-item:hover, .Reactivated .nav .nav-item:active {
+.Reactivated nav .nav-item:hover, .Reactivated nav .nav-item:active {
   color: #858ab5;
   text-decoration: underline;
 }
 
-.Reactivated .nav .nav-item .nav-icon {
+.Reactivated nav .nav-item .nav-icon {
   width: 30px;
   height: 30px;
   margin: 0 20px 0 30px;
   fill: #555a85;
 }
 
-.Reactivated .nav .selected {
+.Reactivated nav .selected {
   color: #858ab5;
   background: linear-gradient(to right, #202340 42px, #252848 69%);
 }
 
-.Reactivated .nav .selected .nav-icon {
+.Reactivated nav .selected .nav-icon {
   fill: #5778f2;
 }
 
-.Reactivated .main {
+.Reactivated main {
   width: calc(100vw - 300px);
   height: calc(100vh - 100px);
   display: grid;
@@ -156,63 +156,63 @@ body {
   overflow-y: scroll;
 }
 
-.Reactivated .main::-webkit-scrollbar {
+.Reactivated main::-webkit-scrollbar {
   width: 5px;
 }
 
-.Reactivated .main::-webkit-scrollbar-track {
+.Reactivated main::-webkit-scrollbar-track {
   background: transparent;
 }
 
-.Reactivated .main::-webkit-scrollbar-button {
+.Reactivated main::-webkit-scrollbar-button {
   display: none;
   opacity: 0;
   visibility: hidden;
 }
 
-.Reactivated .main::-webkit-scrollbar-thumb {
+.Reactivated main::-webkit-scrollbar-thumb {
   background-color: #5778f2;
   border-radius: 1rem;
 }
 
-.Reactivated .main .home {
+.Reactivated main .home {
   width: 100%;
   height: 100%;
   position: relative;
 }
 
-.Reactivated .main .home .text-area {
+.Reactivated main .home .text-area {
   margin-bottom: 50px;
   padding: 42px;
   text-align: right;
 }
 
-.Reactivated .main .home .text-area h2,
-.Reactivated .main .home .text-area h1 {
+.Reactivated main .home .text-area h2,
+.Reactivated main .home .text-area h1 {
   color: #68c180;
   text-shadow: 1px 1px #5778f2;
 }
 
-.Reactivated .main .home .text-area p {
+.Reactivated main .home .text-area p {
   margin-top: 1rem;
   color: #858ab5;
 }
 
-.Reactivated .main .home .text-area p a,
-.Reactivated .main .home .text-area p span {
+.Reactivated main .home .text-area p a,
+.Reactivated main .home .text-area p span {
   color: #e7e8ea;
   text-decoration: none;
   cursor: pointer;
 }
 
-.Reactivated .main .home img {
+.Reactivated main .home img {
   width: 100%;
   position: absolute;
   bottom: 0;
   z-index: -1;
 }
 
-.Reactivated .main .shade {
+.Reactivated main .shade {
   box-shadow: 0 0 1rem 2rem #252848 inset;
 }
 

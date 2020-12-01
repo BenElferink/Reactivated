@@ -61,19 +61,19 @@ body {
   grid-template-areas:
     'header header'
     'nav main';
-  .header {
+  header {
     grid-area: header;
   }
-  .nav {
+  nav {
     grid-area: nav;
   }
-  .main {
+  main {
     grid-area: main;
   }
   @import './Header';
   @import './Nav';
 
-  .main {
+  main {
     width: calc(100vw - 300px);
     height: calc(100vh - 100px);
     display: grid;

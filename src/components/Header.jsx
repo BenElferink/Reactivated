@@ -6,7 +6,7 @@ function Header({ toggleLoginModal, toggleContactModal }) {
   const [loggedUser] = context.logged;
 
   return (
-    <header className='header'>
+    <header>
       <div className='user' onClick={toggleLoginModal}>
         <img src={loggedUser.avatar} alt='avatar' className='avatar' />
         {loggedUser.username}

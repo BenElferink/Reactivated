@@ -69,7 +69,7 @@ function Calculator({ setPage }) {
   }; */
 
   return (
-    <div className='Calculator shade'>
+    <div className='Calculator'>
       <table>
         <thead>
           <tr>
