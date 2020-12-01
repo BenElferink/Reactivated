@@ -1,11 +1,13 @@
 .CurrencyConverter {
-  width: 100%;
-  height: 100%;
-  padding-top: 50px;
+  width: 420px;
+  height: 570px;
+  border-radius: 1em;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   background-color: #ffe4c4;
+  box-shadow: 0 0 1em #000 inset;
 
   p {
     font-size: 14px;
