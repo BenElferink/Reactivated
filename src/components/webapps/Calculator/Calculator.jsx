@@ -75,16 +75,13 @@ function Calculator({ setPage }) {
 
   return (
     <div className='Calculator'>
+      <div className='display'>
+        <input className='prev' value={prevNumber} readOnly />
+        <input className='opr' value={selectedOperator} readOnly />
+        <input className='curr' value={currNumber} readOnly />
+      </div>
+
       <table>
-        <thead>
-          <tr>
-            <th className='display'>
-              <input className='prev' value={prevNumber} readOnly />
-              <input className='opr' value={selectedOperator} readOnly />
-              <input className='curr' value={currNumber} readOnly />
-            </th>
-          </tr>
-        </thead>
         <tbody>
           <tr>
             <td>

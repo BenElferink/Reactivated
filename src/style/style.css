@@ -212,10 +212,6 @@ body {
   z-index: -1;
 }
 
-.Reactivated main .shade {
-  box-shadow: 0 0 1rem 2rem #252848 inset;
-}
-
 .Reactivated .modal-bg {
   z-index: 1;
   width: 100vw;

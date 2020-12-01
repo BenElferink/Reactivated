@@ -81,10 +81,6 @@ body {
     overflow-y: scroll;
     @include scrollbar;
     @import './Home';
-
-    .shade {
-      box-shadow: 0 0 1rem 2rem $background inset;
-    }
   }
   @import './Modal';
 }
