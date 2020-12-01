@@ -17,9 +17,13 @@
   border-radius: 1em;
 }
 
+.Calculator table thead {
+  height: 90px;
+}
+
 .Calculator .display {
-  width: 200px;
-  height: 50px;
+  width: 255px;
+  height: 70px;
   margin: 10px;
   display: flex;
   flex-direction: column;
@@ -38,18 +42,18 @@
 }
 
 .Calculator .display .prev {
-  height: 14px;
-  font-size: 14px;
+  height: 18px;
+  font-size: 15px;
 }
 
 .Calculator .display .opr {
-  height: 12px;
-  font-size: 12px;
+  height: 18px;
+  font-size: 15px;
 }
 
 .Calculator .display .curr {
-  height: 24px;
-  font-size: 18px;
+  height: 34px;
+  font-size: 20px;
 }
 
 .Calculator button {
@@ -67,26 +71,32 @@
 }
 
 .Calculator .numpad {
-  border-top: 2px solid #c878a0;
-  border-left: 2px solid #c878a0;
-  border-bottom: 2px solid #fff;
-  border-right: 2px solid #fff;
+  border: 2px solid #c878a0;
   background-color: #aa466e;
+  color: #fff;
 }
 
 .Calculator .numpad:hover, .Calculator .numpad:active {
   background-color: #963264;
 }
 
-.Calculator .operator {
-  border-top: 2px solid #b4aaa0;
-  border-left: 2px solid #b4aaa0;
-  border-bottom: 2px solid #fff;
-  border-right: 2px solid #fff;
+.Calculator .other {
+  border: 2px solid #b4aaa0;
   background-color: #968c87;
+  color: #000;
+}
+
+.Calculator .other:hover, .Calculator .other:active {
+  background-color: #82787d;
+}
+
+.Calculator .operator {
+  border: 2px solid #8782b9;
+  background-color: #696487;
+  color: #fff;
 }
 
 .Calculator .operator:hover, .Calculator .operator:active {
-  background-color: #82787d;
+  background-color: #55507d;
 }
 /*# sourceMappingURL=style.css.map */

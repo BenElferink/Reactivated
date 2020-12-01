@@ -11,7 +11,7 @@ function Calculator({ setPage }) {
   const [prevNumber, setPrevNumber] = useState('');
   const [currNumber, setCurrNumber] = useState('');
 
-  const calculate = () => {
+  const calculate = (argument) => {
     let res = () => {
       switch (selectedOperator) {
         case '+':
@@ -28,9 +28,14 @@ function Calculator({ setPage }) {
       }
     };
 
-    setSelectedOperator('');
-    setPrevNumber('');
-    setCurrNumber(res().toFixed(2));
+    if (argument === 'bypass') {
+      setPrevNumber(res().toFixed(2));
+      setCurrNumber('');
+    } else {
+      setSelectedOperator('');
+      setPrevNumber('');
+      setCurrNumber(res().toFixed(2));
+    }
   };
 
   const handleNum = (num) => {
@@ -45,7 +50,7 @@ function Calculator({ setPage }) {
       setPrevNumber(currNumber);
       setCurrNumber('');
     } else {
-      calculate();
+      calculate('bypass');
       setSelectedOperator(opr);
     }
   };
@@ -56,17 +61,17 @@ function Calculator({ setPage }) {
     setCurrNumber('');
   };
 
-  /* const handleClearOne = () => {
+  const handleClearOne = () => {
     let newNum = `${currNumber}`;
     newNum = newNum.slice(0, newNum.length - 1);
     setCurrNumber(newNum);
-  }; */
+  };
 
-  /* const handleNegative = () => {
+  const handleNegative = () => {
     let newNum = `${currNumber}`;
     newNum.charAt(0) !== '-' ? (newNum = `-${newNum}`) : (newNum = newNum.slice(1));
     setCurrNumber(newNum);
-  }; */
+  };
 
   return (
     <div className='Calculator'>
@@ -78,16 +83,35 @@ function Calculator({ setPage }) {
               <input className='opr' value={selectedOperator} readOnly />
               <input className='curr' value={currNumber} readOnly />
             </th>
-            <th />
-            <th />
-            <th>
-              <button className='operator' onClick={handleClearAll}>
-                AC
-              </button>
-            </th>
           </tr>
         </thead>
         <tbody>
+          <tr>
+            <td>
+              <button className='other' onClick={handleNegative}>
+                +/-
+              </button>
+            </td>
+            <td>
+              <button className='other' onClick={handleClearAll}>
+                AC
+              </button>
+            </td>
+            <td>
+              <button className='other' onClick={handleClearOne}>
+                ←
+              </button>
+            </td>
+            <td>
+              <button
+                className='operator'
+                onClick={() => {
+                  handleOpr('/');
+                }}>
+                &divide;
+              </button>
+            </td>
+          </tr>
           <tr>
             <td>
               <button
@@ -120,9 +144,9 @@ function Calculator({ setPage }) {
               <button
                 className='operator'
                 onClick={() => {
-                  handleOpr('/');
+                  handleOpr('*');
                 }}>
-                &divide;
+                &times;
               </button>
             </td>
           </tr>
@@ -158,9 +182,9 @@ function Calculator({ setPage }) {
               <button
                 className='operator'
                 onClick={() => {
-                  handleOpr('*');
+                  handleOpr('-');
                 }}>
-                &times;
+                -
               </button>
             </td>
           </tr>
@@ -196,22 +220,14 @@ function Calculator({ setPage }) {
               <button
                 className='operator'
                 onClick={() => {
-                  handleOpr('-');
+                  handleOpr('+');
                 }}>
-                -
+                +
               </button>
             </td>
           </tr>
           <tr>
-            <td>
-              <button
-                className='operator'
-                onClick={() => {
-                  handleNum('.');
-                }}>
-                &middot;
-              </button>
-            </td>
+            <td />
             <td>
               <button
                 className='numpad'
@@ -222,17 +238,18 @@ function Calculator({ setPage }) {
               </button>
             </td>
             <td>
-              <button className='operator' onClick={calculate}>
-                =
+              <button
+                className='other'
+                style={{ fontWeight: '900' }}
+                onClick={() => {
+                  handleNum('.');
+                }}>
+                &middot;
               </button>
             </td>
             <td>
-              <button
-                className='operator'
-                onClick={() => {
-                  handleOpr('+');
-                }}>
-                +
+              <button className='operator' onClick={calculate}>
+                =
               </button>
             </td>
           </tr>

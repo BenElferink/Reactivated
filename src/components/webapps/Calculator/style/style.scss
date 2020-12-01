@@ -14,11 +14,14 @@
     position: relative;
     background-color: rgb(180, 180, 175);
     border-radius: 1em;
+    thead {
+      height: 90px;
+    }
   }
 
   .display {
-    width: 200px;
-    height: 50px;
+    width: 255px;
+    height: 70px;
     margin: 10px;
     display: flex;
     flex-direction: column;
@@ -34,16 +37,16 @@
       outline: none;
     }
     .prev {
-      height: 14px;
-      font-size: 14px;
+      height: 18px;
+      font-size: 15px;
     }
     .opr {
-      height: 12px;
-      font-size: 12px;
+      height: 18px;
+      font-size: 15px;
     }
     .curr {
-      height: 24px;
-      font-size: 18px;
+      height: 34px;
+      font-size: 20px;
     }
   }
 
@@ -53,7 +56,7 @@
     margin: 10px;
     border-radius: 100%;
     font-size: 15px;
-    //color: rgb(25, 20, 55);
+    // color: rgb(25, 20, 55);
     transition: all 0.1s;
     cursor: pointer;
     &:active {
@@ -62,26 +65,32 @@
   }
 
   .numpad {
-    border-top: 2px solid rgb(200, 120, 160);
-    border-left: 2px solid rgb(200, 120, 160);
-    border-bottom: 2px solid #fff;
-    border-right: 2px solid #fff;
+    border: 2px solid rgb(200, 120, 160);
     background-color: rgb(170, 70, 110);
+    color: #fff;
     &:hover,
     &:active {
       background-color: rgb(150, 50, 100);
     }
   }
 
-  .operator {
-    border-top: 2px solid rgb(180, 170, 160);
-    border-left: 2px solid rgb(180, 170, 160);
-    border-bottom: 2px solid #fff;
-    border-right: 2px solid #fff;
+  .other {
+    border: 2px solid rgb(180, 170, 160);
     background-color: rgb(150, 140, 135);
+    color: #000;
     &:hover,
     &:active {
       background-color: rgb(130, 120, 125);
+    }
+  }
+
+  .operator {
+    border: 2px solid rgb(135, 130, 185);
+    background-color: rgb(105, 100, 135);
+    color: #fff;
+    &:hover,
+    &:active {
+      background-color: rgb(85, 80, 125);
     }
   }
 }
