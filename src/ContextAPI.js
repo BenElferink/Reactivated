@@ -1,9 +1,7 @@
 import React, { useState, useEffect, createContext } from 'react';
-// import { checkLocalStorage, saveLocalStorage } from './js/localStorage';
 import Alien from './media/images/avatar-alien.svg';
 
 export const UsersContext = createContext();
-
 export const UsersProvider = (props) => {
   // this state hold all users created,
   // upon first mount it checks if data exists in localSotrage,
@@ -19,10 +17,10 @@ export const UsersProvider = (props) => {
     ])
   );
 
-  // this side effect keeps localStorage updated with changes made to 'users'
+  // this side effect keeps localStorage saved with changes made to 'users'
   useEffect(() => {
-    saveLocalStorage('Reactivated_Database', users);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    localStorage.setItem('Reactivated_Database', JSON.stringify(users));
+    // eslint-disable-next-line
   }, [users]);
 
   // this state holds the active user,
@@ -40,7 +38,7 @@ export const UsersProvider = (props) => {
     let usersCopy = [...users];
     usersCopy[userIndex] = loggedUser;
     setUsers(usersCopy);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, [loggedUser]);
 
   return <UsersContext.Provider value={{ logged: [loggedUser, setLoggedUser, users], all: [users, setUsers] }}>{props.children}</UsersContext.Provider>;
@@ -54,23 +52,5 @@ function checkLocalStorage(key, initialize) {
     return initialize;
   } else {
     return roomsStorage;
-  }
-}
-
-// this functin simply saves the data to localStorage
-function saveLocalStorage(key, data) {
-  localStorage.setItem(key, JSON.stringify(data));
-}
-
-// this function, with the help of 4 required parameters,
-// checks if given user object has a property for the given app.
-// if that property exists, then it's data is returned to the state (where we called this function),
-// if that property doesn't exist, then the given default value is returned to the state.
-export function defineState(loggedUser, appData, stateParameter, defaultValue) {
-  let userAppData = loggedUser[`${appData}`];
-  if (userAppData === undefined) {
-    return defaultValue;
-  } else {
-    return userAppData[`${stateParameter}`];
   }
 }

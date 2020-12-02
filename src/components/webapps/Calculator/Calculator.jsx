@@ -1,11 +1,12 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { UsersContext, defineState } from './../../../ContextAPI';
+import { UsersContext } from './../../../ContextAPI';
+import defineState from './../defineState';
 import './style/style.css';
 
 function Calculator({ setPage }) {
   useEffect(() => {
     setPage('/calculator');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, []);
 
   const context = useContext(UsersContext);
