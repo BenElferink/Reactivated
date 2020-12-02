@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { UsersContext } from './../../../ContextAPI';
+import { UsersContext, defineState } from './../../../ContextAPI';
 import './style/style.css';
 
 function Calculator({ setPage }) {
@@ -20,23 +20,15 @@ function Calculator({ setPage }) {
     setLoggedUser(user);
   });
 
-  function defineState(param, base) {
-    if (loggedUser.calculatorData === undefined) {
-      return base;
-    } else {
-      return loggedUser.calculatorData[`${param}`];
-    }
-  }
-
   // ----------
   // --------------------
   // APP START
   // --------------------
   // ----------
 
-  const [selectedOperator, setSelectedOperator] = useState(defineState('selectedOperator', ''));
-  const [prevNumber, setPrevNumber] = useState(defineState('prevNumber', ''));
-  const [currNumber, setCurrNumber] = useState(defineState('currNumber', ''));
+  const [selectedOperator, setSelectedOperator] = useState(defineState(loggedUser, 'calculatorData', 'selectedOperator', ''));
+  const [prevNumber, setPrevNumber] = useState(defineState(loggedUser, 'calculatorData', 'prevNumber', ''));
+  const [currNumber, setCurrNumber] = useState(defineState(loggedUser, 'calculatorData', 'currNumber', ''));
 
   const calculate = (argument) => {
     let res = () => {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, createContext } from 'react';
-import { checkLocalStorage, saveLocalStorage } from './js/localStorage';
+// import { checkLocalStorage, saveLocalStorage } from './js/localStorage';
 import Alien from './media/images/avatar-alien.svg';
 
 export const UsersContext = createContext();
@@ -18,6 +18,7 @@ export const UsersProvider = (props) => {
       },
     ])
   );
+
   // this side effect keeps localStorage updated with changes made to 'users'
   useEffect(() => {
     saveLocalStorage('Reactivated_Database', users);
@@ -32,6 +33,7 @@ export const UsersProvider = (props) => {
     pinCode: '0000',
     avatar: Alien,
   });
+
   // this side effect updates 'users' with any changes made to 'loggedUser
   useEffect(() => {
     let userIndex = users.filter((user, i) => user.id === loggedUser.id && i);
@@ -43,3 +45,32 @@ export const UsersProvider = (props) => {
 
   return <UsersContext.Provider value={{ logged: [loggedUser, setLoggedUser, users], all: [users, setUsers] }}>{props.children}</UsersContext.Provider>;
 };
+
+// this function checks if any data exists in localStorage with the given key,
+// if no data exists by that key, a standard data structure is given instead
+function checkLocalStorage(key, initialize) {
+  let roomsStorage = JSON.parse(localStorage.getItem(key));
+  if (roomsStorage == null) {
+    return initialize;
+  } else {
+    return roomsStorage;
+  }
+}
+
+// this functin simply saves the data to localStorage
+function saveLocalStorage(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
+// this function, with the help of 4 required parameters,
+// checks if given user object has a property for the given app.
+// if that property exists, then it's data is returned to the state (where we called this function),
+// if that property doesn't exist, then the given default value is returned to the state.
+export function defineState(loggedUser, appData, stateParameter, defaultValue) {
+  let userAppData = loggedUser[`${appData}`];
+  if (userAppData === undefined) {
+    return defaultValue;
+  } else {
+    return userAppData[`${stateParameter}`];
+  }
+}

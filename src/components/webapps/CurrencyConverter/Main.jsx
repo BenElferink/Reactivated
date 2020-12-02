@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { UsersContext } from './../../../ContextAPI';
+import { UsersContext, defineState } from './../../../ContextAPI';
 import CurrencyGroup from './CurrencyGroup';
 import SwapIcon from './media/swap-48px';
 
@@ -15,22 +15,14 @@ function Main({ exchangeRate, setExchangeRate }) {
     setLoggedUser(user);
   });
 
-  function defineState(param, base) {
-    if (loggedUser.currencyData === undefined) {
-      return base;
-    } else {
-      return loggedUser.currencyData[`${param}`];
-    }
-  }
-
   // ----------
   // --------------------
   // APP START
   // --------------------
   // ----------
 
-  const [currencyFrom, setCurrencyFrom] = useState(defineState('currencyFrom', 'USD'));
-  const [currencyTo, setCurrencyTo] = useState(defineState('currencyTo', 'ILS'));
+  const [currencyFrom, setCurrencyFrom] = useState(defineState(loggedUser, 'currencyData', 'currencyFrom', 'USD'));
+  const [currencyTo, setCurrencyTo] = useState(defineState(loggedUser, 'currencyData', 'currencyTo', 'ILS'));
   const [inputFrom, setInputFrom] = useState('');
   const [inputTo, setInputTo] = useState('');
 
