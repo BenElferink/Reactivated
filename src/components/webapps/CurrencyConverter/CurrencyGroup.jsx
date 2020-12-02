@@ -1,5 +1,5 @@
 import React from 'react';
-import { currencies } from './currencies';
+import { currencies } from './js/currencies';
 
 function CurrencyGroup({ selectedCurrency, selectorChange, inputValue, inputChange, readOnly }) {
   // loop through currencies, and if the looped currency is equal to the selected value, then set that flag

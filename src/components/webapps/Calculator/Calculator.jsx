@@ -12,13 +12,15 @@ function Calculator({ setPage }) {
   const context = useContext(UsersContext);
   const [loggedUser, setLoggedUser] = context.logged;
   useEffect(() => {
-    let user = loggedUser;
-    user.calculatorData = {
-      selectedOperator,
-      prevNumber,
-      currNumber,
+    return () => {
+      let user = loggedUser;
+      user.calculatorData = {
+        selectedOperator,
+        prevNumber,
+        currNumber,
+      };
+      setLoggedUser(user);
     };
-    setLoggedUser(user);
   });
 
   // ----------

@@ -20,12 +20,14 @@ function CurrencyConverter({ setPage }) {
   const context = useContext(UsersContext);
   const [loggedUser, setLoggedUser] = context.logged;
   useEffect(() => {
-    let user = loggedUser;
-    user.currencyData = {
-      currencyFrom,
-      currencyTo,
+    return () => {
+      let user = loggedUser;
+      user.currencyData = {
+        currencyFrom,
+        currencyTo,
+      };
+      setLoggedUser(user);
     };
-    setLoggedUser(user);
   });
 
   // ----------
@@ -54,7 +56,6 @@ function CurrencyConverter({ setPage }) {
           setInputTo(parseFloat(inputFrom) * parseFloat(exRate));
         }
       });
-    // eslint-disable-next-line
   });
 
   const handleSwap = () => {
