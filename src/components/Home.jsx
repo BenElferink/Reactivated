@@ -4,8 +4,9 @@ import Waves from './../media/images/wave.svg';
 function Home({ setPage, toggleLoginModal }) {
   useEffect(() => {
     setPage('/');
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line
   }, []);
+
   return (
     <div className='home'>
       <div className='text-area'>
@@ -27,7 +28,7 @@ function Home({ setPage, toggleLoginModal }) {
           </a>
           .
           <br />
-          <u>Note:</u> to prevent loss of data, please prevent from clearing your browser data.
+          <u>Note:</u> to prevent loss of data, please logout at the end of your session.
         </p>
       </div>
       <img src={Waves} alt='waves' />

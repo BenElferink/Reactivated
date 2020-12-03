@@ -32,11 +32,18 @@ export const UsersProvider = (props) => {
     avatar: Alien,
   });
 
-  // this side effect updates 'users' with any changes made to 'loggedUser
+  // this side effect updates 'users' with any changes made to 'loggedUser',
+  // and maintains 'guest' account to remain wiped as default
   useEffect(() => {
     let userIndex = users.filter((user, i) => user.id === loggedUser.id && i);
     let usersCopy = [...users];
     usersCopy[userIndex] = loggedUser;
+    usersCopy[0] = {
+      id: 0,
+      username: 'GUEST',
+      pinCode: '0000',
+      avatar: Alien,
+    };
     setUsers(usersCopy);
     // eslint-disable-next-line
   }, [loggedUser]);

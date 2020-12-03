@@ -10,24 +10,19 @@ import logo from './media/logo-ECB-821px.png';
 function CurrencyConverter({ setPage }) {
   useEffect(() => {
     setPage('/currency-converter');
-
-    fetch('https://api.exchangeratesapi.io/latest')
-      .then((response) => response.json())
-      .then((json) => setUpdatedDate(json.date));
     // eslint-disable-next-line
   }, []);
 
   const context = useContext(UsersContext);
   const [loggedUser, setLoggedUser] = context.logged;
   useEffect(() => {
-    return () => {
-      let user = loggedUser;
-      user.currencyData = {
-        currencyFrom,
-        currencyTo,
-      };
-      setLoggedUser(user);
+    let user = loggedUser;
+    user.currencyData = {
+      currencyFrom,
+      currencyTo,
+      inputFrom,
     };
+    setLoggedUser(user);
   });
 
   // ----------
@@ -36,16 +31,17 @@ function CurrencyConverter({ setPage }) {
   // --------------------
   // ----------
 
-  const [updatedDate, setUpdatedDate] = useState('');
+  const [updatedDate, setUpdatedDate] = useState(null);
   const [exchangeRate, setExchangeRate] = useState('');
   const [currencyFrom, setCurrencyFrom] = useState(defineState(loggedUser, 'currencyData', 'currencyFrom', 'USD'));
   const [currencyTo, setCurrencyTo] = useState(defineState(loggedUser, 'currencyData', 'currencyTo', 'ILS'));
-  const [inputFrom, setInputFrom] = useState('');
+  const [inputFrom, setInputFrom] = useState(defineState(loggedUser, 'currencyData', 'inputFrom', ''));
   const [inputTo, setInputTo] = useState('');
 
   // fetch exchange rate between 2 currencies, through given API
   // runs on every change made to selected currencies and/or given input
   useEffect(() => {
+    fetchDate();
     fetch(`https://api.exchangeratesapi.io/latest?base=${currencyFrom}&symbols=${currencyTo}`)
       .then((response) => response.json())
       .then((json) => {
@@ -57,6 +53,12 @@ function CurrencyConverter({ setPage }) {
         }
       });
   });
+
+  async function fetchDate() {
+    let response = await fetch('https://api.exchangeratesapi.io/latest');
+    let data = await response.json();
+    setUpdatedDate(data.date);
+  }
 
   const handleSwap = () => {
     let currencyOne = currencyFrom;

@@ -16,6 +16,7 @@ function Login({ toggleLoginModal }) {
   const [pinCode, setPinCode] = useState('');
 
   // this side effect keeps checking if the PIN code is correct,
+  // if correct, user object is set
   // checks upon each time the PIN is updated by the user
   useEffect(() => {
     for (let i = 0; i < users.length; i++) {
