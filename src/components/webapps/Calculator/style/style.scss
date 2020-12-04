@@ -1,4 +1,4 @@
-.Calculator {
+.CALCULATOR {
   background-color: rgb(180, 180, 175);
   border-radius: 1em;
 
@@ -43,7 +43,6 @@
     margin: 10px;
     border-radius: 100%;
     font-size: 15px;
-    // color: rgb(25, 20, 55);
     transition: all 0.1s;
     cursor: pointer;
     &:active {

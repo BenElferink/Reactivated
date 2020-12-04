@@ -1,15 +1,15 @@
-.Calculator {
+.CALCULATOR {
   background-color: #b4b4af;
   border-radius: 1em;
 }
 
-.Calculator table,
-.Calculator th,
-.Calculator td {
+.CALCULATOR table,
+.CALCULATOR th,
+.CALCULATOR td {
   border-collapse: collapse;
 }
 
-.Calculator .display {
+.CALCULATOR .display {
   width: 255px;
   height: 70px;
   margin: 10px;
@@ -19,7 +19,7 @@
   background-color: #969b32;
 }
 
-.Calculator .display input {
+.CALCULATOR .display input {
   width: 100%;
   padding-left: 7px;
   background-color: transparent;
@@ -27,22 +27,22 @@
   outline: none;
 }
 
-.Calculator .display .prev {
+.CALCULATOR .display .prev {
   height: 18px;
   font-size: 15px;
 }
 
-.Calculator .display .opr {
+.CALCULATOR .display .opr {
   height: 18px;
   font-size: 15px;
 }
 
-.Calculator .display .curr {
+.CALCULATOR .display .curr {
   height: 34px;
   font-size: 20px;
 }
 
-.Calculator button {
+.CALCULATOR button {
   height: 50px;
   width: 50px;
   margin: 10px;
@@ -52,37 +52,37 @@
   cursor: pointer;
 }
 
-.Calculator button:active {
+.CALCULATOR button:active {
   transform: scale(1.2);
 }
 
-.Calculator .numpad {
+.CALCULATOR .numpad {
   border: 2px solid #c878a0;
   background-color: #aa466e;
   color: #fff;
 }
 
-.Calculator .numpad:hover, .Calculator .numpad:active {
+.CALCULATOR .numpad:hover, .CALCULATOR .numpad:active {
   background-color: #963264;
 }
 
-.Calculator .other {
+.CALCULATOR .other {
   border: 2px solid #b4aaa0;
   background-color: #968c87;
   color: #000;
 }
 
-.Calculator .other:hover, .Calculator .other:active {
+.CALCULATOR .other:hover, .CALCULATOR .other:active {
   background-color: #82787d;
 }
 
-.Calculator .operator {
+.CALCULATOR .operator {
   border: 2px solid #8782b9;
   background-color: #696487;
   color: #fff;
 }
 
-.Calculator .operator:hover, .Calculator .operator:active {
+.CALCULATOR .operator:hover, .CALCULATOR .operator:active {
   background-color: #55507d;
 }
 /*# sourceMappingURL=style.css.map */

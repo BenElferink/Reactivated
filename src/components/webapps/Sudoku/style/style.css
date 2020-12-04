@@ -1,8 +1,8 @@
-.Sudoku {
+.SUDOKU {
   position: relative;
 }
 
-.Sudoku button {
+.SUDOKU button {
   padding: 12px 28px;
   background-color: transparent;
   border: 1px solid #5778f2;
@@ -12,11 +12,11 @@
   cursor: pointer;
 }
 
-.Sudoku button:hover, .Sudoku button:active {
+.SUDOKU button:hover, .SUDOKU button:active {
   background-color: #2e3157;
 }
 
-.Sudoku .start-group {
+.SUDOKU .start-group {
   width: 100%;
   height: 100%;
   display: flex;
@@ -31,70 +31,70 @@
   text-shadow: 0 0 3px #000;
 }
 
-.Sudoku .start-group button {
+.SUDOKU .start-group button {
   width: 250px;
   margin-top: 10px;
   background-color: #5778f2;
   color: #e7e8ea;
 }
 
-.Sudoku .start-group button:hover, .Sudoku .start-group button:active {
+.SUDOKU .start-group button:hover, .SUDOKU .start-group button:active {
   background-color: #202340;
 }
 
-.Sudoku .start-group .difficulty {
+.SUDOKU .start-group .difficulty {
   margin-top: 50px;
   display: flex;
 }
 
-.Sudoku .start-group .difficulty .radio-group {
+.SUDOKU .start-group .difficulty .radio-group {
   margin: 3px 10px;
   display: flex;
   align-items: center;
 }
 
-.Sudoku .start-group .difficulty .radio-group input {
+.SUDOKU .start-group .difficulty .radio-group input {
   margin-right: 7px;
   cursor: pointer;
 }
 
-.Sudoku .start-group .difficulty .radio-group label {
+.SUDOKU .start-group .difficulty .radio-group label {
   color: #e7e8ea;
   font-size: 14px;
   font-weight: 500;
   cursor: pointer;
 }
 
-.Sudoku .start-group .personal-best {
+.SUDOKU .start-group .personal-best {
   color: #858ab5;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.Sudoku .start-group .personal-best p {
+.SUDOKU .start-group .personal-best p {
   margin: 0 20px;
   text-align: center;
 }
 
-.Sudoku .start-group .personal-best table th,
-.Sudoku .start-group .personal-best table td {
+.SUDOKU .start-group .personal-best table th,
+.SUDOKU .start-group .personal-best table td {
   padding: 0 7px;
   text-align: center;
 }
 
-.Sudoku .start-group .personal-best table .diff {
+.SUDOKU .start-group .personal-best table .diff {
   text-align: left;
 }
 
-.Sudoku .game-page .timer {
+.SUDOKU .game-page .timer {
   margin-bottom: 5px;
   color: #e7e8ea;
   font-size: 20px;
   text-align: center;
 }
 
-.Sudoku .game-page .hints {
+.SUDOKU .game-page .hints {
   width: 300px;
   margin: 0 auto;
   display: flex;
@@ -102,26 +102,26 @@
   justify-content: space-evenly;
 }
 
-.Sudoku .game-page .hints svg {
+.SUDOKU .game-page .hints svg {
   width: 50px;
   height: 50px;
   fill: #5778f2;
 }
 
-.Sudoku .game-page .game-table {
+.SUDOKU .game-page .game-table {
   border-collapse: collapse;
   background-color: #2e3157;
 }
 
-.Sudoku .game-page .game-table tr:nth-child(3n) {
+.SUDOKU .game-page .game-table tr:nth-child(3n) {
   border-bottom: 1.5px solid #000;
 }
 
-.Sudoku .game-page .game-table tr:nth-last-child(3n) {
+.SUDOKU .game-page .game-table tr:nth-last-child(3n) {
   border-top: 1.5px solid #000;
 }
 
-.Sudoku .game-page .game-table tr td {
+.SUDOKU .game-page .game-table tr td {
   width: 50px;
   height: 50px;
   border: 0.5px solid #000;
@@ -130,28 +130,28 @@
   cursor: pointer;
 }
 
-.Sudoku .game-page .game-table tr td:nth-child(3n) {
+.SUDOKU .game-page .game-table tr td:nth-child(3n) {
   border-right: 1.5px solid #000;
 }
 
-.Sudoku .game-page .game-table tr td:nth-last-child(3n) {
+.SUDOKU .game-page .game-table tr td:nth-last-child(3n) {
   border-left: 1.5px solid #000;
 }
 
-.Sudoku .game-page .game-table tr td:hover, .Sudoku .game-page .game-table tr td:active {
+.SUDOKU .game-page .game-table tr td:hover, .SUDOKU .game-page .game-table tr td:active {
   background-color: #5778f2;
 }
 
-.Sudoku .game-page .game-table tr .computed {
+.SUDOKU .game-page .game-table tr .computed {
   background-color: rgba(0, 0, 0, 0.2);
   cursor: not-allowed;
 }
 
-.Sudoku .game-page .game-table tr .computed:hover, .Sudoku .game-page .game-table tr .computed:active {
+.SUDOKU .game-page .game-table tr .computed:hover, .SUDOKU .game-page .game-table tr .computed:active {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.Sudoku .game-page .controls {
+.SUDOKU .game-page .controls {
   width: 400px;
   margin: 0 auto;
   display: flex;
@@ -159,7 +159,7 @@
   justify-content: space-evenly;
 }
 
-.Sudoku .num-widget {
+.SUDOKU .num-widget {
   width: 70px;
   height: 70px;
   display: flex;
@@ -172,7 +172,7 @@
   transform: translate(-50%, -50%);
 }
 
-.Sudoku .num-widget .num {
+.SUDOKU .num-widget .num {
   flex-basis: 33%;
   color: #e7e8ea;
   font-size: 14px;
@@ -180,7 +180,7 @@
   cursor: pointer;
 }
 
-.Sudoku .num-widget .num:hover, .Sudoku .num-widget .num:active {
+.SUDOKU .num-widget .num:hover, .SUDOKU .num-widget .num:active {
   transform: scale(1.5);
   color: #fff;
 }

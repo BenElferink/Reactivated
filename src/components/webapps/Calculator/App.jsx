@@ -1,7 +1,9 @@
-import React, { useEffect, useState, useContext } from 'react';
-import { UsersContext } from '../../../ContextAPI';
 import defineState from '../defineState';
+import { UsersContext } from '../../../ContextAPI';
+import React, { useEffect, useState } from 'react';
 import './style/style.css';
+import Display from './components/Display';
+import TableDataButton from './components/TableDataButton';
 
 function Calculator({ setPage }) {
   useEffect(() => {
@@ -9,7 +11,7 @@ function Calculator({ setPage }) {
     // eslint-disable-next-line
   }, []);
 
-  const context = useContext(UsersContext);
+  const context = React.useContext(UsersContext);
   const [loggedUser, setLoggedUser] = context.logged;
   useEffect(() => {
     let user = loggedUser;
@@ -22,9 +24,9 @@ function Calculator({ setPage }) {
   });
 
   // ----------
-  // --------------------
+  // ---------------
   // APP START
-  // --------------------
+  // ---------------
   // ----------
 
   const [selectedOperator, setSelectedOperator] = useState(defineState(loggedUser, 'calculatorData', 'selectedOperator', ''));
@@ -94,181 +96,77 @@ function Calculator({ setPage }) {
   };
 
   return (
-    <div className='Calculator'>
-      <div className='display'>
-        <input className='prev' value={prevNumber} readOnly />
-        <input className='opr' value={selectedOperator} readOnly />
-        <input className='curr' value={currNumber} readOnly />
-      </div>
-
+    <div className='CALCULATOR'>
+      <Display prevNumber={prevNumber} currNumber={currNumber} selectedOperator={selectedOperator} />
       <table>
         <tbody>
           <tr>
-            <td>
-              <button className='other' onClick={handleNegative}>
-                +/-
-              </button>
-            </td>
-            <td>
-              <button className='other' onClick={handleClearAll}>
-                AC
-              </button>
-            </td>
-            <td>
-              <button className='other' onClick={handleClearOne}>
-                ←
-              </button>
-            </td>
-            <td>
-              <button
-                className='operator'
-                onClick={() => {
-                  handleOpr('/');
-                }}>
-                &divide;
-              </button>
-            </td>
+            <TableDataButton className='other' onClick={handleNegative}>
+              +/-
+            </TableDataButton>
+            <TableDataButton className='other' onClick={handleClearAll}>
+              AC
+            </TableDataButton>
+            <TableDataButton className='other' onClick={handleClearOne}>
+              ←
+            </TableDataButton>
+            <TableDataButton className='operator' onClick={handleOpr} value='/'>
+              &divide;
+            </TableDataButton>
           </tr>
           <tr>
-            <td>
-              <button
-                className='numpad'
-                onClick={() => {
-                  handleNum('7');
-                }}>
-                7
-              </button>
-            </td>
-            <td>
-              <button
-                className='numpad'
-                onClick={() => {
-                  handleNum('8');
-                }}>
-                8
-              </button>
-            </td>
-            <td>
-              <button
-                className='numpad'
-                onClick={() => {
-                  handleNum('9');
-                }}>
-                9
-              </button>
-            </td>
-            <td>
-              <button
-                className='operator'
-                onClick={() => {
-                  handleOpr('*');
-                }}>
-                &times;
-              </button>
-            </td>
+            <TableDataButton className='numpad' onClick={handleNum} value='7'>
+              7
+            </TableDataButton>
+            <TableDataButton className='numpad' onClick={handleNum} value='8'>
+              8
+            </TableDataButton>
+            <TableDataButton className='numpad' onClick={handleNum} value='9'>
+              9
+            </TableDataButton>
+            <TableDataButton className='operator' onClick={handleOpr} value='*'>
+              &times;
+            </TableDataButton>
           </tr>
           <tr>
-            <td>
-              <button
-                className='numpad'
-                onClick={() => {
-                  handleNum('4');
-                }}>
-                4
-              </button>
-            </td>
-            <td>
-              <button
-                className='numpad'
-                onClick={() => {
-                  handleNum('5');
-                }}>
-                5
-              </button>
-            </td>
-            <td>
-              <button
-                className='numpad'
-                onClick={() => {
-                  handleNum('6');
-                }}>
-                6
-              </button>
-            </td>
-            <td>
-              <button
-                className='operator'
-                onClick={() => {
-                  handleOpr('-');
-                }}>
-                -
-              </button>
-            </td>
+            <TableDataButton className='numpad' onClick={handleNum} value='4'>
+              4
+            </TableDataButton>
+            <TableDataButton className='numpad' onClick={handleNum} value='5'>
+              5
+            </TableDataButton>
+            <TableDataButton className='numpad' onClick={handleNum} value='6'>
+              6
+            </TableDataButton>
+            <TableDataButton className='operator' onClick={handleOpr} value='-'>
+              -
+            </TableDataButton>
           </tr>
           <tr>
-            <td>
-              <button
-                className='numpad'
-                onClick={() => {
-                  handleNum('1');
-                }}>
-                1
-              </button>
-            </td>
-            <td>
-              <button
-                className='numpad'
-                onClick={() => {
-                  handleNum('2');
-                }}>
-                2
-              </button>
-            </td>
-            <td>
-              <button
-                className='numpad'
-                onClick={() => {
-                  handleNum('3');
-                }}>
-                3
-              </button>
-            </td>
-            <td>
-              <button
-                className='operator'
-                onClick={() => {
-                  handleOpr('+');
-                }}>
-                +
-              </button>
-            </td>
+            <TableDataButton className='numpad' onClick={handleNum} value='1'>
+              1
+            </TableDataButton>
+            <TableDataButton className='numpad' onClick={handleNum} value='2'>
+              2
+            </TableDataButton>
+            <TableDataButton className='numpad' onClick={handleNum} value='3'>
+              3
+            </TableDataButton>
+            <TableDataButton className='operator' onClick={handleOpr} value='+'>
+              +
+            </TableDataButton>
           </tr>
           <tr>
             <td />
-            <td>
-              <button
-                className='numpad'
-                onClick={() => {
-                  handleNum('0');
-                }}>
-                0
-              </button>
-            </td>
-            <td>
-              <button
-                className='other'
-                style={{ fontWeight: '900' }}
-                onClick={() => {
-                  handleNum('.');
-                }}>
-                &middot;
-              </button>
-            </td>
-            <td>
-              <button className='operator' onClick={calculate}>
-                =
-              </button>
-            </td>
+            <TableDataButton className='numpad' onClick={handleNum} value='0'>
+              0
+            </TableDataButton>
+            <TableDataButton className='other' onClick={handleNum} value='.'>
+              &middot;
+            </TableDataButton>
+            <TableDataButton className='operator' onClick={calculate}>
+              =
+            </TableDataButton>
           </tr>
         </tbody>
       </table>

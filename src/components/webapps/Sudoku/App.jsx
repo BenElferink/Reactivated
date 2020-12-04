@@ -24,7 +24,7 @@ function CurrencyConverter({ setPage }) {
   const [difficulty, setDifficulty] = useState('normal');
 
   return (
-    <div className='Sudoku'>
+    <div className='SUDOKU'>
       {!startGame && (
         <div className='start-group'>
           <PersonalBest user={loggedUser} difficulty={difficulty} />
