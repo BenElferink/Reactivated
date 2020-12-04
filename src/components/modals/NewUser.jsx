@@ -45,7 +45,6 @@ function NewUser({ users, setUsers, setCreateNew }) {
       setUsers(usersCopy);
       setCreateNew(false);
     } else {
-      // eslint-ignore
       window.alert(
         `Failed to create a user!
         ${!isOkayUsername() ? '• Username cannot be blank, or previously used.' : '• Username: OK!'}
@@ -119,7 +118,11 @@ function NewUser({ users, setUsers, setCreateNew }) {
       </div>
       <div className='right'>
         <PinCode value={pinCode} setValue={setPinCode} className='pin-new' />
-        <button className='create' onClick={clickCreate}>
+        <button
+          className='create'
+          onClick={clickCreate}
+          // disabled={username !== '' && avatar !== '' && pinCode.length === 4 ? false : true}
+          style={{ cursor: username !== '' && avatar !== '' && pinCode.length === 4 ? 'pointer' : 'not-allowed' }}>
           Create
         </button>
       </div>

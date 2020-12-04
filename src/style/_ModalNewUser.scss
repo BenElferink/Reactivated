@@ -23,10 +23,6 @@
         padding: 10px;
         border-radius: 1rem;
         cursor: pointer;
-        // &:hover,
-        // &:active {
-        //   filter: drop-shadow(0 0 10px $accentPurple);
-        // }
       }
       .selected {
         filter: drop-shadow(0 0 10px $accentPurple);
@@ -45,6 +41,7 @@
   .right {
     .create {
       @include btn-default;
+      border-color: $accentPurple;
     }
   }
 }
