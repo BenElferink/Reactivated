@@ -1,21 +1,14 @@
+import defineState from '../../defineState';
+import { UsersContext } from '../../../../ContextAPI';
 // API source: https://exchangeratesapi.io
-import React, { useEffect, useState, useContext } from 'react';
-import { UsersContext } from './../../../ContextAPI';
-import defineState from './../defineState';
-import './style/style.css';
+import React, { useState, useEffect } from 'react';
 import CurrencyGroup from './CurrencyGroup';
-import SwapIcon from './media/swap-48px';
-import logo from './media/logo-ECB-821px.png';
+import SwapIcon from './../media/swap-48px';
 
-function CurrencyConverter({ setPage }) {
-  useEffect(() => {
-    setPage('/currency-converter');
-    // eslint-disable-next-line
-  }, []);
-
-  const context = useContext(UsersContext);
+function ApiHandling() {
+  const context = React.useContext(UsersContext);
   const [loggedUser, setLoggedUser] = context.logged;
-  useEffect(() => {
+  React.useEffect(() => {
     let user = loggedUser;
     user.currencyData = {
       currencyFrom,
@@ -26,10 +19,15 @@ function CurrencyConverter({ setPage }) {
   });
 
   // ----------
-  // --------------------
+  // ---------------
   // APP START
-  // --------------------
+  // ---------------
   // ----------
+
+  useEffect(() => {
+    fetchDate();
+    fetchExchangeRate();
+  });
 
   const [updatedDate, setUpdatedDate] = useState(null);
   const [exchangeRate, setExchangeRate] = useState('');
@@ -38,26 +36,21 @@ function CurrencyConverter({ setPage }) {
   const [inputFrom, setInputFrom] = useState(defineState(loggedUser, 'currencyData', 'inputFrom', ''));
   const [inputTo, setInputTo] = useState('');
 
-  // fetch exchange rate between 2 currencies, through given API
-  // runs on every change made to selected currencies and/or given input
-  useEffect(() => {
-    fetchDate();
-    fetch(`https://api.exchangeratesapi.io/latest?base=${currencyFrom}&symbols=${currencyTo}`)
-      .then((response) => response.json())
-      .then((json) => {
-        let exRate = json.rates[`${currencyTo}`];
-        setExchangeRate(exRate);
-        // keep output updated
-        if (inputFrom !== '') {
-          setInputTo(parseFloat(inputFrom) * parseFloat(exRate));
-        }
-      });
-  });
-
   async function fetchDate() {
     let response = await fetch('https://api.exchangeratesapi.io/latest');
     let data = await response.json();
     setUpdatedDate(data.date);
+  }
+
+  async function fetchExchangeRate() {
+    let response = await fetch(`https://api.exchangeratesapi.io/latest?base=${currencyFrom}&symbols=${currencyTo}`);
+    let data = await response.json();
+    let exRate = data.rates[`${currencyTo}`];
+    setExchangeRate(exRate);
+    // keep output updated
+    if (inputFrom !== '') {
+      setInputTo(parseFloat(inputFrom) * parseFloat(exRate));
+    }
   }
 
   const handleSwap = () => {
@@ -68,7 +61,7 @@ function CurrencyConverter({ setPage }) {
   };
 
   return (
-    <div className='CurrencyConverter'>
+    <>
       <p>
         Currencies last updated: {updatedDate}
         <br />
@@ -98,16 +91,8 @@ function CurrencyConverter({ setPage }) {
           readOnly={true}
         />
       </div>
-      <div className='footer'>
-        <img src={logo} alt='ECB_logo' />
-        Exchange rates provided by
-        <a href='https://www.ecb.europa.eu/stats/policy_and_exchange_rates/euro_reference_exchange_rates/html/index.en.html' target='blank'>
-          European Central Bank
-        </a>
-        &copy; Ben Elferink 2020
-      </div>
-    </div>
+    </>
   );
 }
 
-export default CurrencyConverter;
+export default ApiHandling;

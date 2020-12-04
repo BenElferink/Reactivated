@@ -1,12 +1,12 @@
 import { UsersContext } from '../../../ContextAPI';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './style/style.css';
 import PersonalBest from './components/PersonalBest';
 import Difficulty from './components/Difficulty';
 import Game from './components/Game';
 
 function CurrencyConverter({ setPage }) {
-  useEffect(() => {
+  React.useEffect(() => {
     setPage('/sudoku');
     // eslint-disable-next-line
   }, []);

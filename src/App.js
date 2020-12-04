@@ -8,7 +8,7 @@ import Home from './components/Home';
 import Login from './components/modals/Login';
 import Contact from './components/modals/Contact';
 import Calculator from './components/webapps/Calculator/App';
-import CurrencyConverter from './components/webapps/CurrencyConverter/CurrencyConverter';
+import CurrencyConverter from './components/webapps/CurrencyConverter/App';
 import Sudoku from './components/webapps/Sudoku/App';
 
 function App() {

@@ -1,19 +1,19 @@
 import defineState from '../defineState';
 import { UsersContext } from '../../../ContextAPI';
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import './style/style.css';
 import Display from './components/Display';
 import TableDataButton from './components/TableDataButton';
 
 function Calculator({ setPage }) {
-  useEffect(() => {
+  React.useEffect(() => {
     setPage('/calculator');
     // eslint-disable-next-line
   }, []);
 
   const context = React.useContext(UsersContext);
   const [loggedUser, setLoggedUser] = context.logged;
-  useEffect(() => {
+  React.useEffect(() => {
     let user = loggedUser;
     user.calculatorData = {
       selectedOperator,
