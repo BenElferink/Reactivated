@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react';
-import { UsersContext } from './../../../ContextAPI';
-import defineState from './../defineState';
+import { UsersContext } from '../../../ContextAPI';
+import defineState from '../defineState';
 import './style/style.css';
 
 function Calculator({ setPage }) {
