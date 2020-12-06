@@ -1,6 +1,5 @@
 nav {
   z-index: 1;
-  width: 300px;
   height: calc(100vh - 100px);
   display: flex;
   flex-direction: column;
@@ -25,8 +24,11 @@ nav {
     .nav-icon {
       width: 30px;
       height: 30px;
-      margin: 0 20px 0 30px;
+      margin: 0 25px;
       fill: $textSoft;
+    }
+    span {
+      width: 220px;
     }
   }
   .selected {
@@ -34,6 +36,17 @@ nav {
     background: linear-gradient(to right, $darker 42px, $background 69%);
     .nav-icon {
       fill: $accentBlue;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  nav {
+    height: calc(100vh - 80px);
+    .nav-item {
+      span {
+        display: none;
+      }
     }
   }
 }

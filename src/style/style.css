@@ -98,9 +98,20 @@ body {
   background-color: #2e3157;
 }
 
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .Reactivated header {
+    height: 80px;
+  }
+  .Reactivated header .user {
+    margin-left: 10px;
+  }
+  .Reactivated header .contact-box {
+    width: 200px;
+  }
+}
+
 .Reactivated nav {
   z-index: 1;
-  width: 300px;
   height: calc(100vh - 100px);
   display: flex;
   flex-direction: column;
@@ -147,8 +158,12 @@ body {
 .Reactivated nav .nav-item .nav-icon {
   width: 30px;
   height: 30px;
-  margin: 0 20px 0 30px;
+  margin: 0 25px;
   fill: #555a85;
+}
+
+.Reactivated nav .nav-item span {
+  width: 220px;
 }
 
 .Reactivated nav .selected {
@@ -158,6 +173,15 @@ body {
 
 .Reactivated nav .selected .nav-icon {
   fill: #5778f2;
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .Reactivated nav {
+    height: calc(100vh - 80px);
+  }
+  .Reactivated nav .nav-item span {
+    display: none;
+  }
 }
 
 .Reactivated main {
@@ -622,6 +646,13 @@ body {
     margin: 0 15px;
     color: #858ab5;
     text-align: center;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .Reactivated main {
+    width: calc(100vw - 80px);
+    height: calc(100vh - 80px);
   }
 }
 /*# sourceMappingURL=style.css.map */

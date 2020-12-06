@@ -33,7 +33,7 @@ function App() {
           <Nav page={page} />
           <main>
             <Switch>
-              <Route exact path='/' component={() => <Home setPage={setPage} toggleLoginModal={toggleLoginModal} />} />
+              <Route exact path='/' component={() => <Home setPage={setPage} toggleLoginModal={toggleLoginModal} modalTriggers={[loginModal, contactModal]} />} />
               <Route exact path='/calculator' component={() => <Calculator setPage={setPage} />} />
               <Route exact path='/currency-converter' component={() => <CurrencyConverter setPage={setPage} />} />
               <Route exact path='/sudoku' component={() => <Sudoku setPage={setPage} />} />

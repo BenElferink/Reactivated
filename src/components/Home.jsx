@@ -1,17 +1,32 @@
 import React, { useEffect } from 'react';
+import Typist from 'react-typist';
 import Waves from './../media/images/wave.svg';
 
-function Home({ setPage, toggleLoginModal }) {
+function Home({ setPage, toggleLoginModal, modalTriggers }) {
   useEffect(() => {
     setPage('/');
     // eslint-disable-next-line
   }, []);
 
+  const [loginModal, contactModal] = modalTriggers;
+
   return (
     <div className='home'>
       <div className='text-area'>
-        <h2>Hi, my name is Ben Elferink,</h2>
-        <h1>I'm a Front End Developer.</h1>
+        {!loginModal && !contactModal ? (
+          <Typist cursor={{ show: false }}>
+            <h2>
+              Hi, my name is Ben Elferink...
+              <Typist.Backspace count={12} delay={200} />,
+            </h2>
+            <h1>I'm a Front End Developer!</h1>
+          </Typist>
+        ) : (
+          <>
+            <h2>Hi, my name is Ben,</h2>
+            <h1>I'm a Front End Developer!</h1>
+          </>
+        )}
         <p>
           Welcome to reactivated.io! My portfolio of{' '}
           <a href='https://reactjs.org' target='blank'>

@@ -14,6 +14,9 @@ header {
     border: 1px solid $textSoft;
     border-radius: 1rem;
     color: $textSoft;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
     user-select: none;
     cursor: pointer;
     .avatar {
@@ -50,6 +53,18 @@ header {
     border-radius: 0 0 0 1rem;
     button {
       @include btn-default;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  header {
+    height: 80px;
+    .user {
+      margin-left: 10px;
+    }
+    .contact-box {
+      width: 200px;
     }
   }
 }

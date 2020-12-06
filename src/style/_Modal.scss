@@ -44,7 +44,17 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .modal-bg {
+    -webkit-animation: fade-in 0.3s linear;
     animation: fade-in 0.3s linear;
+  }
+}
+
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
   }
 }
 

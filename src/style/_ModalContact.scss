@@ -32,6 +32,18 @@
       resize: none;
       overflow-y: scroll;
       @include scrollbar;
+      &::-webkit-input-placeholder {
+        opacity: 1;
+      }
+      &::-moz-placeholder {
+        opacity: 1;
+      }
+      &:-ms-input-placeholder {
+        opacity: 1;
+      }
+      &::-ms-input-placeholder {
+        opacity: 1;
+      }
       &::placeholder {
         opacity: 1;
       }
@@ -48,8 +60,32 @@
             margin-top: 15px;
             padding: 5px 7px;
             font-size: 12px;
+            &::-webkit-input-placeholder {
+              opacity: 0;
+            }
+            &::-moz-placeholder {
+              opacity: 0;
+            }
+            &:-ms-input-placeholder {
+              opacity: 0;
+            }
+            &::-ms-input-placeholder {
+              opacity: 0;
+            }
             &::placeholder {
               opacity: 0;
+            }
+            &:focus::-webkit-input-placeholder {
+              opacity: 1;
+            }
+            &:focus::-moz-placeholder {
+              opacity: 1;
+            }
+            &:focus:-ms-input-placeholder {
+              opacity: 1;
+            }
+            &:focus::-ms-input-placeholder {
+              opacity: 1;
             }
             &:focus::placeholder {
               opacity: 1;
