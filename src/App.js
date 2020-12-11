@@ -12,7 +12,6 @@ import CurrencyConverter from './components/webapps/CurrencyConverter/App';
 import Sudoku from './components/webapps/Sudoku/App';
 
 function App() {
-  const [page, setPage] = useState('/');
   const [loginModal, setLoginModal] = useState(false);
   const [contactModal, setContactModal] = useState(false);
 
@@ -30,13 +29,13 @@ function App() {
       <div className='Reactivated'>
         <Router>
           <Header toggleLoginModal={toggleLoginModal} toggleContactModal={toggleContactModal} />
-          <Nav page={page} />
+          <Nav />
           <main>
             <Switch>
-              <Route exact path='/' component={() => <Home setPage={setPage} toggleLoginModal={toggleLoginModal} modalTriggers={[loginModal, contactModal]} />} />
-              <Route exact path='/calculator' component={() => <Calculator setPage={setPage} />} />
-              <Route exact path='/currency-converter' component={() => <CurrencyConverter setPage={setPage} />} />
-              <Route exact path='/sudoku' component={() => <Sudoku setPage={setPage} />} />
+              <Route exact path='/' component={() => <Home toggleLoginModal={toggleLoginModal} modalTriggers={[loginModal, contactModal]} />} />
+              <Route exact path='/calculator' component={() => <Calculator />} />
+              <Route exact path='/currency-converter' component={() => <CurrencyConverter />} />
+              <Route exact path='/sudoku' component={() => <Sudoku />} />
             </Switch>
           </main>
           {loginModal && <Login toggleLoginModal={toggleLoginModal} />}

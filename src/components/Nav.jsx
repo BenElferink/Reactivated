@@ -1,11 +1,13 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import HomeIcon from './../media/icons/home';
 import CalculatorIcon from './../media/icons/calculator';
 import ExchangeIcon from './../media/icons/exchange';
 import SudokuIcon from './../media/icons/sudoku';
 
-function Nav({ page }) {
+function Nav() {
+  const location = useLocation();
+  const page = location.pathname;
   return (
     <nav>
       <div style={{ height: '30px' }} />

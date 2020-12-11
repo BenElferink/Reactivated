@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { UsersContext } from './../ContextAPI';
+import { UsersContext } from '../js/ContextAPI';
 import { useHistory } from 'react-router-dom';
 import LogoutIcon from './../media/icons/logout';
 

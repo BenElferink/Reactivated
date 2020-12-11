@@ -1,5 +1,6 @@
 import React, { useState, useEffect, createContext } from 'react';
-import Alien from './media/images/avatar-alien.svg';
+import { getStorage, setStorage } from './localSotrage';
+import Alien from './../media/images/avatar-alien.svg';
 
 export const UsersContext = createContext();
 export const UsersProvider = (props) => {
@@ -7,7 +8,7 @@ export const UsersProvider = (props) => {
   // upon first mount it checks if data exists in localSotrage,
   // if it doesn't exist, storage will be initialized with 'GUEST' account.
   const [users, setUsers] = useState(
-    checkLocalStorage('Reactivated_Database', [
+    getStorage('Reactivated_Database', [
       {
         id: 0,
         username: 'GUEST',
@@ -19,8 +20,7 @@ export const UsersProvider = (props) => {
 
   // this side effect keeps localStorage saved with changes made to 'users'
   useEffect(() => {
-    localStorage.setItem('Reactivated_Database', JSON.stringify(users));
-    // eslint-disable-next-line
+    setStorage('Reactivated_Database', users);
   }, [users]);
 
   // this state holds the active user,
@@ -50,14 +50,3 @@ export const UsersProvider = (props) => {
 
   return <UsersContext.Provider value={{ logged: [loggedUser, setLoggedUser, users], all: [users, setUsers] }}>{props.children}</UsersContext.Provider>;
 };
-
-// this function checks if any data exists in localStorage with the given key,
-// if no data exists by that key, a standard data structure is given instead
-function checkLocalStorage(key, initialize) {
-  let roomsStorage = JSON.parse(localStorage.getItem(key));
-  if (roomsStorage == null) {
-    return initialize;
-  } else {
-    return roomsStorage;
-  }
-}

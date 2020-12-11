@@ -1,13 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import Typist from 'react-typist';
 import Waves from './../media/images/wave.svg';
 
-function Home({ setPage, toggleLoginModal, modalTriggers }) {
-  useEffect(() => {
-    setPage('/');
-    // eslint-disable-next-line
-  }, []);
-
+function Home({ toggleLoginModal, modalTriggers }) {
   const [loginModal, contactModal] = modalTriggers;
 
   return (

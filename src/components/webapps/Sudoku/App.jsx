@@ -1,16 +1,11 @@
-import { UsersContext } from '../../../ContextAPI';
+import { UsersContext } from '../../../js/ContextAPI';
 import React, { useState } from 'react';
 import './style/style.css';
 import PersonalBest from './components/PersonalBest';
 import Difficulty from './components/Difficulty';
 import Game from './components/Game';
 
-function CurrencyConverter({ setPage }) {
-  React.useEffect(() => {
-    setPage('/sudoku');
-    // eslint-disable-next-line
-  }, []);
-
+function CurrencyConverter() {
   const context = React.useContext(UsersContext);
   const [loggedUser, setLoggedUser] = context.logged;
 

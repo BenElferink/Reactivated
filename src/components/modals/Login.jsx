@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { UsersContext } from '../../ContextAPI';
+import { UsersContext } from '../../js/ContextAPI';
 import { useHistory } from 'react-router-dom';
 import Modal from './Modal';
 import PinCode from './PinCode';
