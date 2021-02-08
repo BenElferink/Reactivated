@@ -1,49 +1,42 @@
-import React, { useState } from 'react';
+import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './style/style.css';
-import MobileError from './components/MobileError';
-import Header from './components/Header';
-import Nav from './components/Nav';
-import Home from './components/Home';
-import Login from './components/modals/Login';
-import Contact from './components/modals/Contact';
-import Calculator from './components/webapps/Calculator/App';
-import CurrencyConverter from './components/webapps/CurrencyConverter/App';
-import Sudoku from './components/webapps/Sudoku/App';
+import './styles/styles.css';
+import useMediaQuery from './hooks/useMediaQuery';
+import Header from './layout/Header';
+import Navbar from './layout/Navbar';
+const NoMobileSupport = lazy(() => import('./components/NoMobileSupport'));
+const Home = lazy(() => import('./pages/Home'));
+const Sudoku = lazy(() => import('./pages/Sudoku'));
+const LazyLoad = ({ children }) => {
+  return <Suspense fallback={<div />}>{children}</Suspense>;
+};
 
-function App() {
-  const [loginModal, setLoginModal] = useState(false);
-  const [contactModal, setContactModal] = useState(false);
+export default function App() {
+  const isMobile = useMediaQuery('(max-width: 768px)');
 
-  const toggleLoginModal = () => {
-    setLoginModal(!loginModal);
-  };
-
-  const toggleContactModal = () => {
-    setContactModal(!contactModal);
-  };
-
-  return (
-    <>
-      <MobileError />
-      <div className='Reactivated'>
+  if (isMobile) {
+    return (
+      <LazyLoad>
+        <NoMobileSupport />;
+      </LazyLoad>
+    );
+  } else {
+    return (
+      <div className='App'>
         <Router>
-          <Header toggleLoginModal={toggleLoginModal} toggleContactModal={toggleContactModal} />
-          <Nav />
+          <Header />
+          <Navbar />
+
           <main>
-            <Switch>
-              <Route exact path='/' component={() => <Home toggleLoginModal={toggleLoginModal} modalTriggers={[loginModal, contactModal]} />} />
-              <Route exact path='/calculator' component={() => <Calculator />} />
-              <Route exact path='/currency-converter' component={() => <CurrencyConverter />} />
-              <Route exact path='/sudoku' component={() => <Sudoku />} />
-            </Switch>
+            <LazyLoad>
+              <Switch>
+                <Route exact path='/' component={Home} />
+                <Route path='/sudoku' component={Sudoku} />
+              </Switch>
+            </LazyLoad>
           </main>
-          {loginModal && <Login toggleLoginModal={toggleLoginModal} />}
-          {contactModal && <Contact toggleContactModal={toggleContactModal} />}
         </Router>
       </div>
-    </>
-  );
+    );
+  }
 }
-
-export default App;

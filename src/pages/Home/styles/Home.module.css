@@ -1,0 +1,17 @@
+.component {
+  width: 100%;
+  height: 100%;
+  padding: 42px;
+  text-align: right;
+}
+
+.component > h2,
+.component > h1 {
+  color: var(--accentGreen);
+  text-shadow: 1px 1px var(--accentBlue);
+}
+
+.component > p {
+  margin-top: 1rem;
+  color: var(--darkTextBold);
+}

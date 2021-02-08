@@ -1,0 +1,19 @@
+.component {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.component > img {
+  width: 250px;
+  height: 250px;
+  margin: 100px 0 42px 0;
+}
+
+.component > p {
+  margin: 0 15px;
+  color: var(--darkTextBold);
+  text-align: center;
+}

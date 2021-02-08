@@ -1,0 +1,73 @@
+:root {
+  --darkBg: #252848;
+  --darkBgDarker: #202340;
+  --darkBgLighter: #2e3157;
+  --darkTextSoft: #555a85;
+  --darkTextBold: #858ab5;
+  --darkTextNeutral: #e7e8ea;
+
+  --accentBlue: #5778f2;
+  --accentGreen: #68c180;
+  --accentRed: #e45d71;
+  --accentPurple: #9673f7;
+}
+
+@font-face {
+  font-family: Rubik;
+  src: url('./../fonts/Rubik-VariableFont_wght.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+    'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif; */
+  font-family: Rubik;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--darkBg);
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-areas: 'header header' 'nav main';
+}
+.App header {
+  grid-area: header;
+}
+.App nav {
+  grid-area: nav;
+}
+.App main {
+  grid-area: main;
+}
+
+.App main {
+  width: calc(100vw - 300px);
+  height: calc(100vh - 100px);
+  display: grid;
+  place-items: center;
+  overflow-y: scroll;
+}
+
+.App main::-webkit-scrollbar {
+  width: 5px;
+}
+.App main::-webkit-scrollbar-track {
+  background: transparent;
+}
+.App main::-webkit-scrollbar-button {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+}
+.App main::-webkit-scrollbar-thumb {
+  background-color: var(--accentBlue);
+  border-radius: 1rem;
+}

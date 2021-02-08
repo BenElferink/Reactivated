@@ -1,0 +1,77 @@
+.modalBg {
+  z-index: 999;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .modalBg {
+    -webkit-animation: fade-in 0.3s linear;
+    animation: fade-in 0.3s linear;
+  }
+}
+@-webkit-keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.modal {
+  width: 550px;
+  padding: 20px 25px;
+  background-color: var(--darkBg);
+  box-shadow: 0 0 42px #000;
+  border-radius: 1rem;
+  color: var(--darkTextSoft);
+  position: relative;
+}
+
+.modal > h2 {
+  color: var(--darkTextBold);
+}
+
+.modal > p {
+  margin: 7px 0;
+  color: var(--darkTextBold);
+  font-size: 14px;
+}
+
+.close {
+  width: 24px;
+  padding: 1px;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+
+  background-color: var(--accentRed);
+  border: none;
+  border-radius: 100%;
+  color: var(--darkBgDarker);
+  font-size: 19px;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:active {
+  background-color: #c83232;
+}

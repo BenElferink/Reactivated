@@ -1,0 +1,35 @@
+.component {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  color: var(--darkTextSoft);
+  direction: ltr;
+  cursor: pointer;
+}
+
+.component:hover,
+.component:active {
+  color: var(--darkTextBold);
+  text-decoration: underline;
+}
+
+.component > span {
+  width: 220px;
+}
+
+.component > svg {
+  width: 30px;
+  height: 30px;
+  margin: 0 25px;
+  fill: var(--darkTextSoft);
+}
+
+/* CURRENT LOCATION */
+.selected {
+  color: var(--darkTextBold);
+  background: linear-gradient(to right, var(--darkBgDarker) 42px, var(--darkBg) 69%);
+}
+
+.selected > svg {
+  fill: var(--accentBlue);
+}
