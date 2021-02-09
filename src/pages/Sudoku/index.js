@@ -1,12 +1,13 @@
 import { useState } from 'react';
 import styles from './styles/Sudoku.module.css';
+import GithubButton from '../../components/GithubButton';
 import { LinearProgress } from '@material-ui/core';
 
 export default function Sudoku() {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
-    <main>
+    <main className={styles.component}>
       {isLoading && <LinearProgress color='primary' className={styles.progress} />}
 
       <iframe
@@ -16,6 +17,8 @@ export default function Sudoku() {
         className={styles.iframe}
         onLoad={() => setIsLoading(false)}
       />
+
+      <GithubButton href='https://github.com/belferink1996/sudoku-game' />
     </main>
   );
 }
