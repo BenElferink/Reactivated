@@ -1,5 +1,15 @@
+/* NAV BAR */
 .component {
-  height: 60px;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--darkBgDarker);
+  border-radius: 0 2rem 0 0;
+  direction: rtl;
+}
+
+/* NAV ITEM */
+.item {
+  padding: 15px 0;
   display: flex;
   align-items: center;
   color: var(--darkTextSoft);
@@ -7,17 +17,13 @@
   cursor: pointer;
 }
 
-.component:hover,
-.component:active {
+.item:hover,
+.item:active {
   color: var(--darkTextBold);
   text-decoration: underline;
 }
 
-.component > span {
-  width: 220px;
-}
-
-.component > svg {
+.item > svg {
   width: 30px;
   height: 30px;
   margin: 0 25px;
@@ -27,7 +33,7 @@
 /* CURRENT LOCATION */
 .selected {
   color: var(--darkTextBold);
-  background: linear-gradient(to right, var(--darkBgDarker) 42px, var(--darkBg) 69%);
+  background: linear-gradient(to left, var(--accentBlue) -300%, var(--darkBgDarker));
 }
 
 .selected > svg {

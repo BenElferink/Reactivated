@@ -18,6 +18,7 @@ export default function Header() {
 
       <div className={styles.right}>
         <button onClick={toggleContactModal}>Contact Me</button>
+
         {contactModal && (
           <Suspense fallback={<div />}>
             <ContactModal closeModal={toggleContactModal} />

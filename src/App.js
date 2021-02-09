@@ -2,8 +2,8 @@ import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './styles/styles.css';
 import useMediaQuery from './hooks/useMediaQuery';
-import Header from './layout/Header';
-import Navbar from './layout/Navbar';
+import Header from './components/Header';
+import Navbar from './components/Navbar';
 const NoMobileSupport = lazy(() => import('./components/NoMobileSupport'));
 const Home = lazy(() => import('./pages/Home'));
 const Sudoku = lazy(() => import('./pages/Sudoku'));
@@ -27,14 +27,12 @@ export default function App() {
           <Header />
           <Navbar />
 
-          <main>
-            <LazyLoad>
-              <Switch>
-                <Route exact path='/' component={Home} />
-                <Route path='/sudoku' component={Sudoku} />
-              </Switch>
-            </LazyLoad>
-          </main>
+          <LazyLoad>
+            <Switch>
+              <Route exact path='/' component={Home} />
+              <Route path='/sudoku' component={Sudoku} />
+            </Switch>
+          </LazyLoad>
         </Router>
       </div>
     );

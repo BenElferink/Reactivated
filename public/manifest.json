@@ -1,6 +1,7 @@
 {
   "short_name": "Reactivated",
   "name": "Reactivated - A React Portfolio",
+  "description": "Ben Elferink's React.js web development portfolio.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,10 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#858ab5",
-  "background_color": "#252848"
+  "theme_color": "#252848",
+  "background_color": "#252848",
+  "developer": {
+    "name": "Ben Elferink",
+    "url": "https://github.com/belferink1996"
+  }
 }

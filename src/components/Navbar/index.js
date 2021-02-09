@@ -1,5 +1,5 @@
 import styles from './styles/Navbar.module.css';
-import NavItem from '../../components/NavItem';
+import NavItem from './NavItem';
 import HomeRoundedIcon from '@material-ui/icons/HomeRounded';
 import SportsEsportsRoundedIcon from '@material-ui/icons/SportsEsportsRounded';
 import EmailRoundedIcon from '@material-ui/icons/EmailRounded';
@@ -8,8 +8,8 @@ import QueueIcon from './icons/Queue';
 
 export default function Navbar() {
   return (
-    <nav className={styles.component}>
-      <div style={{ height: '20px' }} />
+    <nav className={styles.component + ' scroll'}>
+      <div style={{ height: '30px' }} />
       <NavItem title='Home' path='/' Icon={HomeRoundedIcon} />
       <NavItem title='Sudoku' path='/sudoku' Icon={SportsEsportsRoundedIcon} />
       <NavItem title='Gmail' path='/gmail' Icon={EmailRoundedIcon} />

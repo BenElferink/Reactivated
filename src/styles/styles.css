@@ -38,36 +38,40 @@ body {
   display: grid;
   grid-template-areas: 'header header' 'nav main';
 }
+
 .App header {
   grid-area: header;
+  width: 100%;
+  height: 100px;
 }
+
 .App nav {
   grid-area: nav;
+  width: 300px;
+  height: calc(100vh - 100px);
 }
+
 .App main {
   grid-area: main;
-}
-
-.App main {
   width: calc(100vw - 300px);
   height: calc(100vh - 100px);
-  display: grid;
-  place-items: center;
-  overflow-y: scroll;
 }
 
-.App main::-webkit-scrollbar {
+.scroll {
+  overflow-y: scroll;
+}
+.scroll::-webkit-scrollbar {
   width: 5px;
 }
-.App main::-webkit-scrollbar-track {
+.scroll::-webkit-scrollbar-track {
   background: transparent;
 }
-.App main::-webkit-scrollbar-button {
+.scroll::-webkit-scrollbar-button {
   display: none;
   opacity: 0;
   visibility: hidden;
 }
-.App main::-webkit-scrollbar-thumb {
+.scroll::-webkit-scrollbar-thumb {
   background-color: var(--accentBlue);
   border-radius: 1rem;
 }
