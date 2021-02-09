@@ -12,8 +12,8 @@ export default function Navbar() {
       <div style={{ height: '30px' }} />
       <NavItem title='Home' path='/' Icon={HomeRoundedIcon} />
       <NavItem title='Sudoku' path='/sudoku' Icon={SportsEsportsRoundedIcon} />
-      <NavItem title='Gmail' path='/gmail' Icon={EmailRoundedIcon} />
       <NavItem title='Queue' path='/queue' Icon={QueueIcon} />
+      <NavItem title='Gmail clone' path='/gmail' Icon={EmailRoundedIcon} />
     </nav>
   );
 }

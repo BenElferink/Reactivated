@@ -9,7 +9,7 @@
 
 /* NAV ITEM */
 .item {
-  padding: 15px 0;
+  padding: 12px 0;
   display: flex;
   align-items: center;
   color: var(--darkTextSoft);
@@ -33,7 +33,7 @@
 /* CURRENT LOCATION */
 .selected {
   color: var(--darkTextBold);
-  background: linear-gradient(to left, var(--accentBlue) -300%, var(--darkBgDarker));
+  background: linear-gradient(to left, var(--accentBlue) -420%, var(--darkBgDarker));
 }
 
 .selected > svg {

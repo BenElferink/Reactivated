@@ -7,9 +7,6 @@ import Navbar from './components/Navbar';
 const NoMobileSupport = lazy(() => import('./components/NoMobileSupport'));
 const Home = lazy(() => import('./pages/Home'));
 const Sudoku = lazy(() => import('./pages/Sudoku'));
-const LazyLoad = ({ children }) => {
-  return <Suspense fallback={<div />}>{children}</Suspense>;
-};
 
 export default function App() {
   const isMobile = useMediaQuery('(max-width: 768px)');
@@ -38,3 +35,5 @@ export default function App() {
     );
   }
 }
+
+const LazyLoad = ({ children }) => <Suspense fallback={<div />}>{children}</Suspense>;
