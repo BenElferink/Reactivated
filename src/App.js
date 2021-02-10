@@ -4,6 +4,7 @@ import './styles/styles.css';
 import useMediaQuery from './hooks/useMediaQuery';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
+import Particles from './components/Particles';
 const NoMobileSupport = lazy(() => import('./components/NoMobileSupport'));
 const Home = lazy(() => import('./pages/Home'));
 const Sudoku = lazy(() => import('./pages/Sudoku'));
@@ -31,6 +32,8 @@ export default function App() {
             </Switch>
           </LazyLoad>
         </Router>
+
+        <Particles />
       </div>
     );
   }
