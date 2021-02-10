@@ -1,0 +1,52 @@
+.article {
+  margin: 0 0 20px 0;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 992px) {
+  .article {
+    margin: 0 50px 20px 50px;
+  }
+}
+
+.article > h3 {
+  font-size: 30px;
+  color: var(--accentGreen);
+  text-shadow: 1px 1px var(--accentBlue);
+}
+
+.article > p {
+  width: 420px;
+  margin: 14px 0;
+}
+
+.article > p,
+.article > ul {
+  color: var(--darkTextBold);
+  text-shadow: 0.5px 0.5px var(--accentBlue);
+}
+
+.article > ul {
+  margin-left: 24px;
+}
+
+.article > h6 {
+  color: var(--darkTextBold);
+  font-size: 16px;
+  font-weight: 400;
+  text-shadow: 0.5px 0.5px var(--accentBlue);
+}
+
+.buttons {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.preview {
+  width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+}

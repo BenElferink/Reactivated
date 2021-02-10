@@ -5,9 +5,11 @@ import useMediaQuery from './hooks/useMediaQuery';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
 import Particles from './components/Particles';
+
 const NoMobileSupport = lazy(() => import('./components/NoMobileSupport'));
 const Home = lazy(() => import('./pages/Home'));
-const Sudoku = lazy(() => import('./pages/Sudoku'));
+const Queue = lazy(() => import('./pages/ProjectPage/Queue'));
+const Gmail = lazy(() => import('./pages/ProjectPage/Gmail'));
 
 export default function App() {
   const isMobile = useMediaQuery('(max-width: 768px)');
@@ -28,7 +30,8 @@ export default function App() {
           <LazyLoad>
             <Switch>
               <Route exact path='/' component={Home} />
-              <Route path='/sudoku' component={Sudoku} />
+              <Route path='/queue' component={Queue} />
+              <Route path='/gmail' component={Gmail} />
             </Switch>
           </LazyLoad>
         </Router>

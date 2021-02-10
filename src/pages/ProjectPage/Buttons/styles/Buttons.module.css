@@ -4,7 +4,6 @@
   margin: 7px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
   background-color: #111;
   border-radius: 1rem;
   border: none;
@@ -17,4 +16,8 @@
 .btn:hover,
 .btn:active {
   background-color: #444;
+}
+
+.btn > svg {
+  margin-right: 7px;
 }

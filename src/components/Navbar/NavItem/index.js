@@ -1,5 +1,5 @@
 import { useHistory, useLocation } from 'react-router-dom';
-import styles from './styles/Navbar.module.css';
+import styles from './styles/NavItem.module.css';
 
 export default function NavItem({ title, Icon, path }) {
   const { pathname } = useLocation();
