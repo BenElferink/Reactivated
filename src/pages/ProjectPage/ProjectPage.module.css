@@ -38,6 +38,12 @@
   text-shadow: 0.5px 0.5px var(--accentBlue);
 }
 
+.preview {
+  width: 100%;
+  -o-object-fit: contain;
+  object-fit: contain;
+}
+
 .buttons {
   width: 100%;
   display: flex;
@@ -45,8 +51,29 @@
   justify-content: center;
 }
 
-.preview {
-  width: 100%;
-  -o-object-fit: contain;
-  object-fit: contain;
+.btn {
+  width: 160px;
+  padding: 10px;
+  margin: 7px;
+  display: flex;
+  align-items: center;
+  background-color: #111;
+  border-radius: 1rem;
+  border: none;
+  color: var(--darkTextNeutral);
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn:hover,
+.btn:active {
+  background-color: #444;
+}
+
+.btn > svg {
+  width: 30px;
+  height: 30px;
+  margin-right: 7px;
+  fill: var(--darkTextNeutral);
 }

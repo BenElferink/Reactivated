@@ -1,6 +1,6 @@
-import styles from './styles/ContactModal.module.css';
-import ContactForm from './ContactForm';
-import Modal from '../Modal';
+import styles from './ContactModal.module.css';
+import Modal from '../../layout/Modal';
+import ContactForm from '../ContactForm';
 
 export default function ContactModal({ closeModal }) {
   return (

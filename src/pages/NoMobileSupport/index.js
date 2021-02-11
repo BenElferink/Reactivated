@@ -1,5 +1,5 @@
-import styles from './styles/NoMobileSupport.module.css';
-import NoMobile from './icons/no-mobile.svg';
+import styles from './NoMobileSupport.module.css';
+import NoMobile from './no-mobile.svg';
 
 export default function MobileError() {
   return (

@@ -1,0 +1,23 @@
+.component {
+  width: 300px;
+  height: 100%;
+  margin: 0 0 0 auto;
+  display: grid;
+  place-items: center;
+  background-color: var(--darkBgDarker);
+  border-radius: 0 0 0 1rem;
+}
+
+.component > button {
+  padding: 12px 28px;
+  background-color: transparent;
+  border: 1px solid var(--accentBlue);
+  border-radius: 10px;
+  color: var(--darkTextNeutral);
+  font-size: 14px;
+  cursor: pointer;
+}
+.component > button:hover,
+.component > button:active {
+  background-color: var(--darkBgLighter);
+}

@@ -1,4 +1,4 @@
-import styles from './styles/Particles.module.css';
+import styles from './Particles.module.css';
 import Particles from 'react-particles-js';
 
 export default function index() {

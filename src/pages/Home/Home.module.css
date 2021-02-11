@@ -43,14 +43,15 @@
   justify-content: center;
 }
 .socials svg {
+  width: 30px;
+  height: 30px;
   margin: 5px;
-  font-size: 35px;
-  color: var(--darkTextBold);
+  fill: var(--darkTextBold);
   -webkit-filter: drop-shadow(0 0 1px var(--accentBlue));
   filter: drop-shadow(0 0 1px var(--accentBlue));
   cursor: pointer;
 }
 .socials svg:hover,
 .socials svg:active {
-  color: var(--darkTextNeutral);
+  fill: var(--darkTextNeutral);
 }

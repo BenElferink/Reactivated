@@ -12,6 +12,7 @@
 }
 
 .modal {
+  min-height: 100px;
   padding: 20px 25px;
   background-color: var(--darkBg);
   box-shadow: 0 0 42px #000;

@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import styles from './styles/ContactForm.module.css';
+import styles from './ContactForm.module.css';
 import * as emailjs from 'emailjs-com';
-import Loading from '../../Loading';
+import Loading from '../Loading';
 
 export default function ContactForm({ closeModal }) {
   const [name, setName] = useState('');

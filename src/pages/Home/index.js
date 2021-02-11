@@ -1,7 +1,7 @@
-import styles from './styles/Home.module.css';
-import myself from './images/me_profile.jpeg';
-import LinkedInIcon from '@material-ui/icons/LinkedIn';
-import GitHubIcon from '@material-ui/icons/GitHub';
+import styles from './Home.module.css';
+import myself from '../../images/me_profile.jpeg';
+import LinkedInIcon from '../../icons/LinkedIn';
+import GitHubIcon from '../../icons/GitHub';
 
 export default function Home() {
   return (
@@ -18,14 +18,14 @@ export default function Home() {
       </div>
 
       <div className={styles.socials}>
+        <a href='https://github.com/belferink1996' target='_blank' rel='noreferrer'>
+          <GitHubIcon />
+        </a>
         <a
           href='https://www.linkedin.com/in/ben-elferink-37ba251b9'
           target='_blank'
           rel='noreferrer'>
           <LinkedInIcon />
-        </a>
-        <a href='https://github.com/belferink1996' target='_blank' rel='noreferrer'>
-          <GitHubIcon />
         </a>
       </div>
     </main>

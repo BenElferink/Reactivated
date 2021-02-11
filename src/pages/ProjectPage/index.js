@@ -1,5 +1,6 @@
-import styles from './styles/ProjectPage.module.css';
-import { GitHubButton, LaunchButton } from './Buttons';
+import styles from './ProjectPage.module.css';
+import GitHubIcon from '../../icons/GitHub';
+import LaunchIcon from '../../icons/Launch';
 
 export default function ProjectPage({ title, info, techStack, github, deployed, preview }) {
   return (
@@ -17,8 +18,18 @@ export default function ProjectPage({ title, info, techStack, github, deployed, 
       </article>
 
       <div className={styles.buttons}>
-        {github && <GitHubButton href={github} />}
-        {deployed && <LaunchButton href={deployed} />}
+        {github && (
+          <a href={github} target='_blank' rel='noreferrer' className={styles.btn}>
+            <GitHubIcon />
+            Source Code
+          </a>
+        )}
+        {deployed && (
+          <a href={deployed} target='_blank' rel='noreferrer' className={styles.btn}>
+            <LaunchIcon />
+            Launch App
+          </a>
+        )}
       </div>
 
       <img className={styles.preview} src={preview} alt='preview' />

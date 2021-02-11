@@ -1,12 +1,12 @@
 import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './styles/styles.css';
+import './styles/index.css';
 import useMediaQuery from './hooks/useMediaQuery';
-import Header from './components/Header';
-import Navbar from './components/Navbar';
+import Header from './layout/Header';
+import Navbar from './layout/Navbar';
 import Particles from './components/Particles';
 
-const NoMobileSupport = lazy(() => import('./components/NoMobileSupport'));
+const NoMobileSupport = lazy(() => import('./pages/NoMobileSupport'));
 const Home = lazy(() => import('./pages/Home'));
 const Queue = lazy(() => import('./pages/ProjectPage/Queue'));
 const Gmail = lazy(() => import('./pages/ProjectPage/Gmail'));
