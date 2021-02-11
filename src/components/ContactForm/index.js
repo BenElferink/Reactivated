@@ -13,17 +13,18 @@ export default function ContactForm({ closeModal }) {
     e.preventDefault();
     setIsSending(true);
 
-    let SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-    let TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-    let USER_ID = process.env.REACT_APP_EMAILJS_USER_ID;
-    let data = {
-      name: name,
-      email: email,
-      message: message,
-    };
-
     try {
-      const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, data, USER_ID);
+      const response = await emailjs.send(
+        process.env.REACT_APP_EMAILJS_SERVICE_ID,
+        process.env.REACT_APP_EMAILJS_TEMPLATE_ID,
+        {
+          name: name,
+          email: email,
+          message: message,
+        },
+        process.env.REACT_APP_EMAILJS_USER_ID,
+      );
+
       console.log(`✅ ${response.status} ${response.text}`);
       closeModal();
       alert('✅ Email sent');
