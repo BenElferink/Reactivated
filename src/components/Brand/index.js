@@ -5,7 +5,7 @@ export default function index() {
   return (
     <div className={styles.component}>
       <img src={Alien} alt='Alien' />
-      reactivated.io
+      reactivated.dev
     </div>
   );
 }
