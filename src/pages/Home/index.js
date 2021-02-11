@@ -5,7 +5,7 @@ import GitHubIcon from '../../icons/GitHub';
 
 export default function Home() {
   return (
-    <main>
+    <main className='scroll'>
       <div className={styles.heading}>
         <h2>Hi, my name is Ben Elferink,</h2>
         <h1>I'm a Web & App Developer!</h1>
