@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import styles from './styles/ContactForm.module.css';
 import * as emailjs from 'emailjs-com';
-import { CircularProgress } from '@material-ui/core';
+import Loading from '../../Loading';
 
 export default function ContactForm({ closeModal }) {
   const [name, setName] = useState('');
@@ -35,7 +35,7 @@ export default function ContactForm({ closeModal }) {
   }
 
   return (
-    <form className={styles.form}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <div className={styles.row}>
         <div className={styles.rowHalf}>
           <label htmlFor='name'>Name</label>
@@ -54,7 +54,7 @@ export default function ContactForm({ closeModal }) {
           <input
             id='email'
             name='email'
-            type='text'
+            type='email'
             placeholder='john.doe@example.com'
             value={email}
             onChange={(e) => {
@@ -65,12 +65,9 @@ export default function ContactForm({ closeModal }) {
 
         <div className={styles.rowHalf}>
           {isSending ? (
-            <CircularProgress color='primary' />
+            <Loading />
           ) : (
-            <button
-              type='submit'
-              onClick={handleSubmit}
-              disabled={name === '' || email === '' || message === ''}>
+            <button type='submit' disabled={name === '' || email === '' || message === ''}>
               Send
             </button>
           )}
