@@ -11,29 +11,10 @@
 }
 
 .heading > p {
-  margin-top: 0.5rem;
+  margin: 0.5em 0;
   color: var(--darkTextBold);
   text-shadow: 0.5px 0.5px var(--accentBlue);
   font-size: 18px;
-}
-
-.image {
-  width: 250px;
-  height: 250px;
-  margin: 24px auto 12px auto;
-  position: relative;
-}
-.image > img,
-.image > div {
-  width: 100%;
-  height: 100%;
-  border-radius: 3rem;
-}
-.image > div {
-  background-color: rgba(0, 0, 0, 0.4);
-  position: absolute;
-  top: 0;
-  box-shadow: 0 0 5px var(--accentBlue);
 }
 
 .socials {
@@ -47,8 +28,6 @@
   height: 30px;
   margin: 5px;
   fill: var(--darkTextBold);
-  -webkit-filter: drop-shadow(0 0 1px var(--accentBlue));
-  filter: drop-shadow(0 0 1px var(--accentBlue));
   cursor: pointer;
 }
 .socials svg:hover,
