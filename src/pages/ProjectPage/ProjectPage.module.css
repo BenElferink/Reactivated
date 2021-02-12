@@ -42,6 +42,8 @@
   width: 100%;
   -o-object-fit: contain;
   object-fit: contain;
+  -webkit-filter: drop-shadow(0 0 5px var(--accentBlue));
+  filter: drop-shadow(0 0 5px var(--accentBlue));
 }
 
 .buttons {
