@@ -1,5 +1,4 @@
 import styles from './Home.module.css';
-import myself from '../../images/me_profile.jpeg';
 import LinkedInIcon from '../../icons/LinkedIn';
 import GitHubIcon from '../../icons/GitHub';
 
