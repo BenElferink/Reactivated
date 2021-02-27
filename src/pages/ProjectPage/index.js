@@ -1,4 +1,4 @@
-import styles from './ProjectPage.module.css';
+import styles from './index.module.css';
 import GitHubIcon from '../../icons/GitHub';
 import LaunchIcon from '../../icons/Launch';
 
