@@ -1,6 +1,6 @@
-import { lazy, Suspense, useState } from 'react';
+import { useState } from 'react';
 import Button from '../Button';
-const ContactModal = lazy(() => import('../Modal/ContactModal'));
+import ContactModal from '../Modal/ContactModal';
 
 export default function ContactMe() {
   const [contactModal, setContactModal] = useState(false);
@@ -21,11 +21,7 @@ export default function ContactMe() {
         Contact Me
       </Button>
 
-      {contactModal && (
-        <Suspense fallback={<div />}>
-          <ContactModal closeModal={() => setContactModal(false)} />
-        </Suspense>
-      )}
+      {contactModal && <ContactModal closeModal={() => setContactModal(false)} />}
     </div>
   );
 }

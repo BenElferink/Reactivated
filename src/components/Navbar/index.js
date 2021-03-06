@@ -1,10 +1,7 @@
 import { useRef } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
 import HomeIcon from '../../icons/Home';
-import QueueIcon from '../../icons/Queue';
-import GmailIcon from '../../icons/Gmail';
-import TwitterIcon from '../../icons/Twitter';
-// import WhatsAppIcon from '../../icons/WhatsApp';
+import projectsData from '../../data/projects';
 
 export default function Navbar() {
   const navStyles = {
@@ -19,10 +16,14 @@ export default function Navbar() {
     <nav style={navStyles} className='scroll'>
       <div style={{ height: '30px' }} />
       <NavItem title='Home' path='/' Icon={HomeIcon} />
-      <NavItem title='Queue' path='/queue' Icon={QueueIcon} />
-      <NavItem title='Gmail' path='/gmail' Icon={GmailIcon} />
-      <NavItem title='Twitter' path='/twitter' Icon={TwitterIcon} />
-      {/* <NavItem title='WhatsApp' path='/whatsapp' Icon={WhatsAppIcon} /> */}
+      {projectsData.map((item) => (
+        <NavItem
+          key={item.nav.path}
+          title={item.nav.title}
+          path={item.nav.path}
+          Icon={item.nav.icon}
+        />
+      ))}
     </nav>
   );
 }
