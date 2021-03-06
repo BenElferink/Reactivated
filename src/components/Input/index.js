@@ -42,7 +42,7 @@ export default function Input({
     position: 'absolute',
     top: isFocused || value ? '3px' : '10px', // dynamic (on focus OR not empty)
     left: isFocused || value ? '5px' : '10px', // dynamic (on focus OR not empty)
-    fontSize: isFocused || value ? '11px' : '15px', // dynamic (on focus OR not empty)
+    fontSize: isFocused || value ? '12px' : '16px', // dynamic (on focus OR not empty)
     backgroundColor: 'transparent',
     color: 'var(--darkTextSoft)',
     cursor: 'text',
