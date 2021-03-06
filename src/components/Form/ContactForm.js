@@ -45,14 +45,14 @@ export default function ContactForm({ closeModal }) {
             flexFlow: 'row wrap',
           }}>
           <Input
-            label='Name &nbsp; (John Doe)'
+            label='Name (John Doe)'
             name='name'
             value={formData['name']}
             formChange={handleChange}
             required
           />
           <Input
-            label='Email &nbsp; (john.doe@example.com)'
+            label='Email (john.doe@example.com)'
             type='email'
             name='email'
             value={formData['email']}
