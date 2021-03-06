@@ -14,9 +14,9 @@ export default function ContactModal({ closeModal }) {
         lessons in Fullstack JavaScript.
         <br />
         <br />
-        • Feel free to contact me with any topic!
+        • Feel free to contact me with any topic! I'll be glad to hear from you!
         <br />
-        I'll be glad to hear from you!
+        <br />
       </p>
 
       <ContactForm closeModal={closeModal} />
