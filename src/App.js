@@ -2,8 +2,8 @@ import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import './styles/index.css';
 import useMediaQuery from './hooks/useMediaQuery';
-import Header from './layout/Header';
-import Navbar from './layout/Navbar';
+import Header from './components/Header';
+import Navbar from './components/Navbar';
 import Particles from './components/Particles';
 
 const NoMobileSupport = lazy(() => import('./pages/NoMobileSupport'));

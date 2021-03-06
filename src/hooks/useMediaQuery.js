@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 
 export default function useMediaQuery(query) {
-  const [matchQuery, setMatchQuery] = useState(false);
+  const [isQueryMatch, setIsQueryMatch] = useState(false);
 
   useEffect(() => {
     const media = window.matchMedia(query);
@@ -14,14 +14,14 @@ export default function useMediaQuery(query) {
     // }
 
     // update state when condition changes
-    if (media.matches !== matchQuery) setMatchQuery(media.matches);
+    if (media.matches !== isQueryMatch) setIsQueryMatch(media.matches);
 
     // handle listener for MediaQueryList
-    const listener = () => setMatchQuery(media.matches);
+    const listener = () => setIsQueryMatch(media.matches);
     media.addListener(listener);
     return () => media.removeListener(listener);
-  }, [matchQuery, query]);
+  }, [isQueryMatch, query]);
 
   // either true or false
-  return matchQuery;
+  return isQueryMatch;
 }

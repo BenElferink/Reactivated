@@ -1,4 +1,3 @@
-import styles from './Particles.module.css';
 import Particles from 'react-particles-js';
 
 export default function index() {
@@ -53,7 +52,14 @@ export default function index() {
 
   const retina_detect = true;
 
-  return (
-    <Particles className={styles.component} params={{ particles, interactivity, retina_detect }} />
-  );
+  const particleStyles = {
+    width: '100vw',
+    height: '100vh',
+    position: 'absolute',
+    top: '0',
+    left: '0',
+    zIndex: '-999',
+  };
+
+  return <Particles style={particleStyles} params={{ particles, interactivity, retina_detect }} />;
 }
