@@ -1,8 +1,27 @@
+import AbilisenseIcon from '../icons/Abilisense';
+import AbilisenseImage from '../images/abilisense.png';
 import QueueIcon from '../icons/Queue';
 import GmailIcon from '../icons/Gmail';
 import TwitterIcon from '../icons/Twitter';
 
 const projectsData = [
+  {
+    nav: {
+      title: 'Abilisense',
+      path: '/abilisense',
+      icon: AbilisenseIcon,
+    },
+    page: {
+      title: 'Abilisense - internship',
+      info:
+        'I started as an intern at Abilisense - and created the website using Fullstack technologies, I had to convert old vanilla code to React, and some Python code to Node.js, eventually I developed a script with Python which is used on external sensors.',
+      tech_stack: ['React.js', 'Node.js', 'MongoDB', 'socket.io', 'Python'],
+      // github: 'https://github.com/belferink1996/',
+      deployed: 'https://www.abilisense.com',
+      preview: AbilisenseImage,
+    },
+  },
+
   {
     nav: {
       title: 'Queue',
