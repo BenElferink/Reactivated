@@ -1,16 +1,6 @@
 import { useState, useRef } from 'react';
 
-export default function Input({
-  label,
-  type,
-  required,
-  name,
-  value,
-  onChange,
-  formChange,
-  textArea,
-  width,
-}) {
+export default function Input({ label, type, required, name, value, onChange, formChange, width }) {
   const [manipulatedType, setManipulatedType] = useState(type ? type : 'text');
   const [isFocused, setIsFocused] = useState(false);
   const inputRef = useRef(null),
@@ -28,7 +18,7 @@ export default function Input({
   };
 
   const inputStyles = {
-    width: '90%',
+    width: '95%',
     margin: '18px 5px 3px 5px', // defines the group (div) dimensions
     backgroundColor: 'transparent',
     border: 'none',
@@ -51,37 +41,17 @@ export default function Input({
 
   return (
     <div style={groupStyles} onClick={focusOnInput}>
-      {textArea ? (
-        <textarea
-          ref={inputRef}
-          style={{ ...inputStyles, resize: 'none' }}
-          rows='1'
-          required={required}
-          name={name}
-          value={value}
-          onChange={(e) => {
-            formChange ? formChange(e) : onChange(e.target.value);
-            // The following auto-resizes the textarea to the number of rows typed
-            inputRef.current.style.height = 'auto';
-            inputRef.current.style.padding = '0';
-            inputRef.current.style.height = `${inputRef.current.scrollHeight}px`;
-          }}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-        />
-      ) : (
-        <input
-          ref={inputRef}
-          style={inputStyles}
-          type={manipulatedType}
-          required={required}
-          name={name}
-          value={value ? value : ''}
-          onChange={(e) => (formChange ? formChange(e) : onChange(e.target.value))}
-          onFocus={() => setIsFocused(true)}
-          onBlur={() => setIsFocused(false)}
-        />
-      )}
+      <input
+        ref={inputRef}
+        style={inputStyles}
+        type={manipulatedType}
+        required={required}
+        name={name}
+        value={value ? value : ''}
+        onChange={(e) => (formChange ? formChange(e) : onChange(e.target.value))}
+        onFocus={() => setIsFocused(true)}
+        onBlur={() => setIsFocused(false)}
+      />
 
       {/* show/hide icon for input with type "password" */}
       {type === 'password' && manipulatedType === 'password' ? (

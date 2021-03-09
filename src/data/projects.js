@@ -13,7 +13,7 @@ const projectsData = [
     },
     page: {
       title: 'Abilisense - internship',
-      info:
+      description:
         'I started as an intern at Abilisense - and created the website using Fullstack technologies, I had to convert old vanilla code to React, and some Python code to Node.js, eventually I developed a script with Python which is used on external sensors.',
       tech_stack: ['React.js', 'Node.js', 'MongoDB', 'socket.io', 'Python'],
       // github: 'https://github.com/belferink1996/',
@@ -30,7 +30,7 @@ const projectsData = [
     },
     page: {
       title: 'Queue - SaaS',
-      info:
+      description:
         'Queue is a small startup I have developed with Aman Kuvera. It aims to be a Q&A solution for online teaching, Queue is a SaaS company (software as a service) FREE to use!',
       tech_stack: ['React.js', 'Node.js', 'MongoDB', 'socket.io'],
       github: 'https://github.com/belferink1996/Queue',
@@ -48,7 +48,7 @@ const projectsData = [
     },
     page: {
       title: 'Gmail - clone',
-      info:
+      description:
         'This clone was built to practice Backend programming, using JavaScript to create a RESTful API. This clone does not really send or receive mail, yet the server behaves in a way to make you think you are communicating with someone.',
       tech_stack: ['React.js', 'Node.js', 'MongoDB'],
       github: 'https://github.com/belferink1996/MERN-Gmail-clone',
@@ -66,7 +66,7 @@ const projectsData = [
     },
     page: {
       title: 'Twitter - clone',
-      info:
+      description:
         'This clone was built to practice Fullstack programming, using JavaScript to create a RESTful API. With this clone you can create an account, follow other users, and post tweets, even with images!',
       tech_stack: ['React.js', 'Node.js', 'MongoDB'],
       github: 'https://github.com/belferink1996/MERN-Twitter-clone',

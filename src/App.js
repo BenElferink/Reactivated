@@ -27,7 +27,7 @@ export default function App() {
               <Route key={item.nav.path} path={item.nav.path}>
                 <ProjectPage
                   title={item.page.title}
-                  info={item.page.info}
+                  description={item.page.description}
                   techStack={item.page.tech_stack}
                   github={item.page.github}
                   deployed={item.page.deployed}
