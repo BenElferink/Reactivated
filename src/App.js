@@ -1,16 +1,16 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import './styles/index.css';
-import useMediaQuery from './hooks/useMediaQuery';
-import Particles from './components/Particles';
-import Header from './components/Header';
-import Navbar from './components/Navbar';
-import Home from './pages/Home';
-import ProjectPage from './pages/ProjectPage';
-import projectsData from './data/projects';
-import NoMobileSupport from './pages/NoMobileSupport';
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./styles/index.css";
+import useMediaQuery from "./hooks/useMediaQuery";
+import Particles from "./components/Particles";
+import Header from "./components/Header";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import ProjectPage from "./pages/ProjectPage";
+import projectsData from "./data/projects";
+import NoMobileSupport from "./pages/NoMobileSupport";
 
 export default function App() {
-  const isMobile = useMediaQuery('(max-width: 768px)');
+  const isMobile = useMediaQuery("(max-width: 768px)");
 
   if (isMobile) {
     return <NoMobileSupport />;
@@ -29,7 +29,7 @@ export default function App() {
                   title={item.page.title}
                   description={item.page.description}
                   techStack={item.page.tech_stack}
-                  github={item.page.github}
+                  repo={item.page.repo}
                   deployed={item.page.deployed}
                   preview={item.page.preview}
                 />
