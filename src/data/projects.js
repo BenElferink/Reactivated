@@ -14,7 +14,7 @@ const projectsData = [
     page: {
       title: "Abilisense - internship",
       description:
-        "I started as an intern at Abilisense - and created the website using Fullstack technologies, I had to convert old vanilla code to React, and some Python code to Node.js, eventually I developed a script with Python which is used on external sensors.",
+        "I started as an intern at Abilisense - and created the website using Fullstack technologies, I had to convert old vanilla code to React, and some Python code to Node.js, eventually I developed a Python software which is used on external sensors hardware. Today I'm a Fullstack team lead in the company, and I pass my exprience and knowledge to new developers.",
       tech_stack: ["React.js", "Node.js", "MongoDB", "socket.io", "Python"],
       repo: "https://gitlab.com/erez7/abilisense-website",
       deployed: "https://www.abilisense.com",
