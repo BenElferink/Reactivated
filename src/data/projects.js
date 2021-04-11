@@ -12,10 +12,10 @@ const projectsData = [
       icon: AbilisenseIcon,
     },
     page: {
-      title: "Abilisense - internship",
+      title: "Abilisense - from internship, to Team Lead",
       description:
-        "I started as an intern at Abilisense - and created the website using Fullstack technologies, I had to convert old vanilla code to React, and some Python code to Node.js, eventually I developed a Python software which is used on external sensors hardware. Today I'm a Fullstack team lead in the company, and I pass my exprience and knowledge to new developers.",
-      tech_stack: ["React.js", "Node.js", "MongoDB", "socket.io", "Python"],
+        "I started as an intern at Abilisense - and created the company's website and platform from scratch. Soon enough I developed the company's backend and API, and created an external software in Python. All 3 (massive) projects communicate and interact with each other in brilliant ways! Today I'm a Fullstack team lead in the company, and I help new developers gain the knowledge and experience I gained.",
+      tech_stack: ["Python", "React.js", "Node.js", "MongoDB", "socket.io"],
       repo: "https://gitlab.com/erez7/abilisense-website",
       deployed: "https://www.abilisense.com",
       preview: AbilisenseImage,
