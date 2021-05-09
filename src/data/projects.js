@@ -3,7 +3,7 @@ import GmailIcon from "../icons/Gmail";
 import TwitterIcon from "../icons/Twitter";
 import AbilisenseIcon from "../icons/Abilisense";
 import AbilisenseImage from "../images/abilisense.png";
-import RaionaIcon from "../icons/Raiona.svg";
+import RaionaIcon from "../icons/Raiona.jsx";
 import RaionaImage from "../images/raiona.png";
 
 const projectsData = [
@@ -28,8 +28,7 @@ const projectsData = [
     nav: {
       title: "Raiona",
       path: "/raiona",
-      // icon: ,
-      image: RaionaIcon,
+      icon: RaionaIcon,
     },
     page: {
       title: "Raiona - freelance",
