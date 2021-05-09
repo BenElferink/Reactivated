@@ -53,7 +53,8 @@ export default function ProjectPage({ title, description, techStack, repo, deplo
   };
 
   const previewStyles = {
-    width: "100%",
+    width: "95%",
+    margin: "11px 2.5%",
     "-o-object-fit": "contain",
     "object-fit": "contain",
     "-webkit-filter": "drop-shadow(0 0 5px var(--accentBlue))",
