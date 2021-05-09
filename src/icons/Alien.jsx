@@ -1,6 +1,6 @@
-export default function Icon({ style }) {
+export default function Icon({ ...props }) {
   return (
-    <svg style={style} viewBox='-32 1 511 512'>
+    <svg {...props} viewBox='-32 1 511 512'>
       <path
         fill='#b1ef97'
         d='M447.21 223.355C447.21 346.711 318.638 512 223.856 512S.5 346.71.5 223.355 100.5 0 223.855 0s223.356 100 223.356 223.355zm0 0'

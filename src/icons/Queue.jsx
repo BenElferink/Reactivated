@@ -1,8 +1,8 @@
-export default function Icon({ style }) {
-  const symbolColor = '#202340';
+export default function Icon({ ...props }) {
+  const symbolColor = "#202340";
 
   return (
-    <svg style={style} viewBox='0 0 1080 1080'>
+    <svg {...props} viewBox='0 0 1080 1080'>
       <path d='M540 1079.5a539.33 539.33 0 01-381.48-921A539.49 539.49 0 11750 1037.1a536 536 0 01-210 42.4z' />
       <path
         fill={symbolColor}
