@@ -1,0 +1,36 @@
+.textWrap {
+  width: 100%;
+  margin-top: 15vh;
+  text-align: center;
+}
+
+.title {
+  color: var(--accentGreen);
+  text-shadow: 1px 1px var(--accentBlue);
+}
+
+.text {
+  margin: 0.5em 0;
+  color: var(--darkTextBold);
+  text-shadow: 0.5px 0.5px var(--accentBlue);
+  font-size: 18px;
+}
+
+.socials {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  margin: 5px;
+  fill: var(--darkTextBold);
+  cursor: pointer;
+}
+
+.icon:hover {
+  fill: var(--darkTextNeutral);
+}
