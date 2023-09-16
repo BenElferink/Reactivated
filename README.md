@@ -1,3 +1,3 @@
-# Reactivated - My Portfolio (DEPRECATED)
+# Reactivated - Portfolio (DEPRECATED)
 
 <img src='./preview.png' alt='preview' />
